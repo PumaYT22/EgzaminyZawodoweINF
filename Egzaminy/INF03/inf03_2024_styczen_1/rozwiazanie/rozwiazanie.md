@@ -8,17 +8,17 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
   <CodeGroupItem title="index.html">
 
 ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
             
-    </body>
-    </html>
+</body>
+</html>
 ```
 
   </CodeGroupItem>
@@ -26,10 +26,10 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
   <CodeGroupItem title="style.css">
 
 ```css
-        .App {
-        width: 60%; /* Ustawienie szerokości aplikacji na 60% body*/
-        margin: 0 auto; /* Wyśrodkowanie aplikacji */
-        }
+.App {
+    width: 60%; /* Ustawienie szerokości aplikacji na 60% body*/
+    margin: 0 auto; /* Wyśrodkowanie aplikacji */
+}
 ```
 
   </CodeGroupItem>
@@ -37,7 +37,7 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
   <CodeGroupItem title="javascript.js">
 
 ```js
-        console.log("Hello World Test")
+console.log("Hello World Test")
 ```
 
   </CodeGroupItem>
