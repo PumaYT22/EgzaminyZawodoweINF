@@ -12,6 +12,7 @@ Znajdziesz tu:
 
 Dołącz do społeczności NaukaOdZera i rozwijaj swoje umiejętności informatyczne!
 
+- Discord: [NaukaOdZera](https://discord.gg/3VtcKBNA3s)
 - Twitter/X: [NaukaOdZera](https://x.com/NaukaOdZera)
 - Youtube: [NaukaOdZera](https://www.youtube.com/@NaukaOdZera)
 - Tiktok: [NaukaOdZera](https://www.tiktok.com/@naukaodzera)
