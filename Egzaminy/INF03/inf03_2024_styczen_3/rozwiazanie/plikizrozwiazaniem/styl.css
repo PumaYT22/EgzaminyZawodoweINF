@@ -1,0 +1,81 @@
+/* Styl CSS */
+body {
+    background-color: #EEEEEE;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo , header .menu {
+    background-color: LightBlue;
+    height: 100px;
+    width: 50%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+nav.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.banner {
+    background-color: #DDDDDD;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    color: Navy;
+    margin: 50px;
+    height: 400px;
+}
+
+footer {
+    text-align: right;
+    background-color: LightBlue;
+    padding: 10px;
+}
+
+button {
+    background-color: LightBlue;
+    color: Navy;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+nav.menu a {
+    color: Navy;
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+}
+
+nav.menu a:hover {
+    border: 1px solid Navy;
+}
