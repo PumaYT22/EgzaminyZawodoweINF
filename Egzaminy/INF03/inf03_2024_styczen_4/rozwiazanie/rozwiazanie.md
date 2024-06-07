@@ -4,7 +4,7 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 ## Kod na Stronę Internetową
 
-**index.html**
+**kalendarz.php**
 
 ```php
 ﻿<!DOCTYPE HTML > 
