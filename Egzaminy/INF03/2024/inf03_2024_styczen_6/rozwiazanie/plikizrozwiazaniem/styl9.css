@@ -7,17 +7,27 @@ header, footer{
     color: white;
     padding: 7px;
 }
-aside{
+#lewy{
+    float:left;
+    background-color: #EF9A9A;
+    width: 20%;
+    height: 500px;
+}
+#prawy{
+    float: left;
     background-color: #EF9A9A;
     width: 20%;
     height: 500px;
 }
 #srodek{
+    float: left;
+    justify-content: center;
     background-color: mistyrose;
-    width: 20%;
+    width: 60%;
     height: 500px;
 }
 #dane{
+    clear: both;
     background-color: mistyrose;
     padding: 50px;
 }
