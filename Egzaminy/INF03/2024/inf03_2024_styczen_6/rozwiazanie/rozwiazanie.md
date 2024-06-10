@@ -1,3 +1,12 @@
+# Rozwiązanie arkusza INF 03 styczeń 2024 - 6
+
+W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css oraz zapytania SQL.
+
+## Kod na Stronę Internetową
+
+**biuro.php**
+
+```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -9,11 +18,7 @@
 <body>
     <div id="container">
     <header>
-<<<<<<< HEAD
     <h1>BIURO PODRÓŻY</h1>
-=======
-    <h1>BIURO PODRÓŻ</h1>
->>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     </header>
 
     <main>
@@ -37,7 +42,6 @@
         <section id="srodek">
             <h2>W tym roku jedziemy do...</h2>
             <?php
-<<<<<<< HEAD
                 $conn = mysqli_connect('localhost', 'root', '', 'podroze');
                 $q = "SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis ASC;";
             
@@ -48,9 +52,6 @@
                         echo "<img src='" . $row["nazwaPliku"] . "' alt='" . $row["podpis"] . "' title='" . $row["podpis"] . "'>";                 
                     }
                     mysqli_close($conn);
-=======
-
->>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
             ?>
         </section>
         <aside id="prawy">
@@ -61,7 +62,6 @@
     </main>
     <section id="dane">
         <h3>W poprzednich latach byliśmy...</h3>
-<<<<<<< HEAD
         <?php
         $conn = mysqli_connect('localhost', 'root', '', 'podroze');
 
@@ -86,13 +86,6 @@
         
         mysqli_close($conn);
         ?>
-=======
-    <ol>
-        <?php
-        
-        ?>
-    </ol>
->>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     </section>
     <footer>
         <p>Stronę wykonał: NaukaOdZera</p>
@@ -100,3 +93,60 @@
     </div>
 </body>
 </html>
+```
+**styl9.css**
+```css
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+header, footer{
+    background-color: #BA6B6C;
+    color: white;
+    padding: 7px;
+}
+#lewy{
+    float:left;
+    background-color: #EF9A9A;
+    width: 20%;
+    height: 500px;
+}
+#prawy{
+    float: left;
+    background-color: #EF9A9A;
+    width: 20%;
+    height: 500px;
+}
+#srodek{
+    float: left;
+    justify-content: center;
+    background-color: mistyrose;
+    width: 60%;
+    height: 500px;
+}
+#dane{
+    clear: both;
+    background-color: mistyrose;
+    padding: 50px;
+}
+ol{
+    list-style: upper-roman;
+}
+li{
+    text-align: left;
+}
+h2::first-letter{
+    font-size: 170%;
+    color: maroon;
+}
+table{
+    padding: auto;
+    width: 80%;
+    border: solid 1px maroon;
+}
+img{
+    height: 120px;
+    margin: 7px;
+    box-shadow: 7px 7px 7px dimgray;
+}
+```

@@ -7,17 +7,39 @@ header, footer{
     color: white;
     padding: 7px;
 }
+<<<<<<< HEAD
+#lewy{
+    float:left;
+    background-color: #EF9A9A;
+    width: 20%;
+    height: 500px;
+}
+#prawy{
+    float: left;
+=======
 aside{
+>>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     background-color: #EF9A9A;
     width: 20%;
     height: 500px;
 }
 #srodek{
+<<<<<<< HEAD
+    float: left;
+    justify-content: center;
+    background-color: mistyrose;
+    width: 60%;
+    height: 500px;
+}
+#dane{
+    clear: both;
+=======
     background-color: mistyrose;
     width: 20%;
     height: 500px;
 }
 #dane{
+>>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     background-color: mistyrose;
     padding: 50px;
 }
