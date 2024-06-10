@@ -1,0 +1,8 @@
+KWERENDA 1:
+SELECT imie, nazwisko, stanowisko FROM kadra WHERE stanowisko="fryzjer" OR stanowisko="stylista";
+KWERENDA 2:
+SELECT COUNT(nazwa), MAX(cena) FROM uslugi WHERE rodzaj=2;
+KWERENDA 3:
+SELECT nazwa, imie FROM uslugi JOIN kadra ON kadra_id= kadra.id WHERE rodzaj>1;
+KWERENDA 4:
+ALTER TABLE USLUGI ADD opinia TEXT;
