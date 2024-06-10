@@ -1,8 +1,8 @@
-#Rozwiązanie arkusza INF 03 styczeń 2024 - 6
+# Rozwiązanie arkusza INF 03 styczeń 2024 - 6
 
 W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css oraz zapytania SQL.
 
-##Kod na Stronę Internetową
+## Kod na Stronę Internetową
 
 **biuro.php**
 
