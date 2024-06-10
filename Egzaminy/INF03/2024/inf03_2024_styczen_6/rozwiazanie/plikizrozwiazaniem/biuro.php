@@ -9,7 +9,11 @@
 <body>
     <div id="container">
     <header>
+<<<<<<< HEAD
     <h1>BIURO PODRÓŻY</h1>
+=======
+    <h1>BIURO PODRÓŻ</h1>
+>>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     </header>
 
     <main>
@@ -33,6 +37,7 @@
         <section id="srodek">
             <h2>W tym roku jedziemy do...</h2>
             <?php
+<<<<<<< HEAD
                 $conn = mysqli_connect('localhost', 'root', '', 'podroze');
                 $q = "SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis ASC;";
             
@@ -43,6 +48,9 @@
                         echo "<img src='" . $row["nazwaPliku"] . "' alt='" . $row["podpis"] . "' title='" . $row["podpis"] . "'>";                 
                     }
                     mysqli_close($conn);
+=======
+
+>>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
             ?>
         </section>
         <aside id="prawy">
@@ -53,6 +61,7 @@
     </main>
     <section id="dane">
         <h3>W poprzednich latach byliśmy...</h3>
+<<<<<<< HEAD
         <?php
         $conn = mysqli_connect('localhost', 'root', '', 'podroze');
 
@@ -77,6 +86,13 @@
         
         mysqli_close($conn);
         ?>
+=======
+    <ol>
+        <?php
+        
+        ?>
+    </ol>
+>>>>>>> 6059cd29ec66510bca5cab1d98707d41a21b15c3
     </section>
     <footer>
         <p>Stronę wykonał: NaukaOdZera</p>
