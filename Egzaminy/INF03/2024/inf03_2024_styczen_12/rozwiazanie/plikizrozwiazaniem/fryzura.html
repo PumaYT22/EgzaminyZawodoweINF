@@ -37,7 +37,15 @@
             </table>
         </div>
         <div id="lewy2">
-            <img src="obraz2.jpg" alt="Strzyżenie">
+            <h2>PROMOCJA!</h2>
+            <form>
+                <input type="radio" name="wlosy" id="krotkie" value="25">Krótkie <br>
+                <input type="radio" name="wlosy" id="srednie" value="30">Średnie <br>
+                <input type="radio" name="wlosy" id="poldlugie" value="40">Półdługie <br>
+                <input type="radio" name="wlosy" id="dlugie" value="50">Długie <br>
+                <button type="button" onclick="wyswietlCene()">Odkryj promocję</button>
+            </form>
+            <p id="promocjaWynik"></p>
         </div>
         <div id="prawy2">
             <img src="obraz1.jpg" alt="Fryzjerka">
@@ -50,5 +58,28 @@
             <p>Autor: NaukaOdZera</p>
         </div>
     </div>
+    <script>
+        function wyswietlCene() {
+            var krotkie = document.getElementById("krotkie");
+            var srednie = document.getElementById("srednie");
+            var poldlugie = document.getElementById("poldlugie");
+            var dlugie = document.getElementById("dlugie");
+            var promocyjnaCena;
+
+            if (krotkie.checked) {
+                promocyjnaCena = krotkie.value - 10;
+            } else if (srednie.checked) {
+                promocyjnaCena = srednie.value - 10;
+            } else if (poldlugie.checked) {
+                promocyjnaCena = poldlugie.value - 10;
+            } else if (dlugie.checked) {
+                promocyjnaCena = dlugie.value - 10;
+            }
+
+            if (promocyjnaCena != undefined) {
+                document.getElementById("promocjaWynik").innerText = `cena promocyjna: ${promocyjnaCena}`;
+            }
+        }
+    </script>
 </body>
 </html>
