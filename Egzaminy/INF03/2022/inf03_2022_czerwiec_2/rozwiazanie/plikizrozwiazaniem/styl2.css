@@ -1,0 +1,61 @@
+body {
+    font-family: Cambria, serif;
+    text-align: center;
+}
+
+#banner, footer {
+    background-color: rgb(120, 0, 46);
+    color: white;
+    padding: 5px;
+    font-size: 150%;
+}
+
+#menu {
+    background-color: rgb(173, 20, 87);
+    text-align: left;
+}
+
+main{
+    display: flex;
+}
+
+#left {
+    background-color: Snow;
+    color: OliveDrab;
+    width: 60%;
+    height: 322px;
+    text-align: left;
+}
+
+#left h2{
+    text-align: center;
+}
+
+#right {
+    background-color: rgb(173, 20, 87);
+    width: 40%;
+    height: 322px;
+}
+
+#right img {
+    margin: 40px;
+    padding: 10px;
+}
+
+#right img:hover {
+    border: 1px dotted YellowGreen;
+}
+
+a {
+    padding: 0 50px;
+    color: YellowGreen;
+}
+
+table, td, th {
+    border: 1px solid OliveDrab;
+    text-align: center;
+}
+
+table {
+    width: 90%;
+}
