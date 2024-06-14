@@ -1,0 +1,46 @@
+body{
+    background-color: #F6E5DC;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+}
+
+.baner{
+    background-color: #2F180C;
+    text-align: center;
+    color:khaki;
+    height: 60px;
+}
+
+.panele{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plewy{
+    width: 60%;
+}
+
+.pprawy{
+    font-size: 150%;
+    padding: 70px;
+}
+
+.pdolny{
+    background-color: #D0B6A8;
+    text-align: center;
+    padding: 30px;
+}
+
+.stopka{
+    background-color: #2F180C;
+    height: 60px;
+    color:khaki;
+}
+
+
+button {
+    margin: 10px;
+    padding: 5px;
+    background-color: #2F180C;
+    color: khaki;
+}
