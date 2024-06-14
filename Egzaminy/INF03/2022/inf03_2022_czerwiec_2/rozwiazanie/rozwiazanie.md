@@ -1,271 +1,181 @@
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 1
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę (przeskalować oraz dodać przeźroczystość do obrazu) 
+i zapytania sql oraz stronę internetową z wskazanym html,css,js.
+
+### Zapytania SQL
+
+```sql
+1. SELECT marka, rocznik FROM samochody WHERE kolor="niebieski";
+2. SELECT COUNT(*) FROM samochody WHERE (marka = "Toyota" OR marka = "Opel") AND stan="bardzo dobry";
+3. UPDATE samochody SET stan = "dobry" WHERE rocznik < 2004;
+4. CREATE USER "jan"@"localhost" IDENTIFIED BY "janKowalski1@";
+5. GRANT SELECT, INSERT, UPDATE ON samochody TO "jan"@"localhost";
+```
 
 ### Kod na Stronę Internetową
 
-#### index.html
+#### obliczenia.html
 
 ```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
+    <section id="banner">
+        <h1>Całodobowa stacja paliw</h1>
+    </section>
+    <section id="menu">
+        <a href="stacja.html"><img src="home.png" alt="Home"></a>
+        <a href="obliczenia.html"><img src="znak.png" alt="Obliczenia"></a>
+        <a href="kwerendy.txt">Pobierz dokumenty</a>
+    </section>
+    <main>
+        <section id="left">
+            <h2>Orientacyjny koszt paliwa</h2>
+            <label for="fuelType">Rodzaj paliwa (1-benzyna, 2-olej napędowy):</label><br>
+            <input type="number" id="fuelType" name="fuelType">
+            <br>
+            <label for="liters">Ile litrów?</label><br>
+            <input type="number" id="liters" name="liters">
+            <br>
+            <button onclick="calculateCost()">OBLICZ</button>
+            <p id="result"></p>
         </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### uslugi.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
+        <section id="right">
+            <img src="samochod.png" alt="samochód">
         </section>
-        <main>
-            <h2>Oferta</h2>
-            <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
-            </ol>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### kontakt.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <hr>
-            <p id="komunikat"></p>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-
-
+    </main>
+   
+    <footer>
+        <p>Stronę opracował: NaukaOdZera</p>
+    </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
+        function calculateCost() {
+            const fuelType = parseInt(document.getElementById('fuelType').value);
+            const liters = parseInt(document.getElementById('liters').value);
+            let cost = 0;
 
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
+            if (fuelType === 1) {
+                cost = liters * 4;
+            } else if (fuelType === 2) {
+                cost = liters * 3.5;
+            }
 
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
+            document.getElementById('result').innerText = `koszt paliwa: ${cost} zł`;
         }
-    }
-
     </script>
 </body>
 </html>
-
 ```
-#### styl.css
+
+#### stacja.html
+
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <section id="banner">
+        <h1>Całodobowa stacja paliw</h1>
+    </section>
+    <section id="menu">
+        <a href="stacja.html"><img src="home.png" alt="Home"></a>
+        <a href="obliczenia.html"><img src="znak.png" alt="Obliczenia"></a>
+        <a href="kwerendy.txt">Pobierz dokumenty</a>
+    </section>
+    <main>
+        <section id="left">
+            <h2>Godziny otwarcia stacji</h2>
+            <table>
+                <tr><th>Dzień</th><th>Od</th><th>Do</th></tr>
+                <tr><td>Pn-Sb</td><td>6:00</td><td>24:00</td></tr>
+                <tr><td>Nd</td><td>7:00</td><td>24:00</td></tr>
+            </table>
+        </section>
+        <section id="right">
+            <img src="samochod.png" alt="samochód">
+        </section>
+    </main>
+    <footer>
+        <p>Stronę opracował: NaukaOdZera</p>
+    </footer>
+</body>
+</html>
+```
+
+#### styl2.css
 
 ```css
-/* Styl CSS */
 body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Cambria, serif;
+    text-align: center;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+#banner, footer {
+    background-color: rgb(120, 0, 46);
+    color: white;
+    padding: 5px;
+    font-size: 150%;
 }
 
-header {
+#menu {
+    background-color: rgb(173, 20, 87);
+    text-align: left;
+}
+
+main{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
+#left {
+    background-color: Snow;
+    color: OliveDrab;
+    width: 60%;
+    height: 322px;
+    text-align: left;
 }
 
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#left h2{
+    text-align: center;
 }
 
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#right {
+    background-color: rgb(173, 20, 87);
+    width: 40%;
+    height: 322px;
 }
 
-main {
-    color: Navy;
-    margin: 50px;
-    height: 400px;
-}
-
-footer {
-    text-align: right;
-    background-color: LightBlue;
+#right img {
+    margin: 40px;
     padding: 10px;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+#right img:hover {
+    border: 1px dotted YellowGreen;
 }
 
-button:hover {
-    opacity: 0.8;
+a {
+    padding: 0 50px;
+    color: YellowGreen;
 }
 
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 10px;
-    padding: 5px;
+table, td, th {
+    border: 1px solid OliveDrab;
+    text-align: center;
 }
 
-nav.menu a:hover {
-    border: 1px solid Navy;
+table {
+    width: 90%;
 }
 
 ```
+
