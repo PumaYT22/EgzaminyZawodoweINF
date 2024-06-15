@@ -1,0 +1,58 @@
+* {
+    font-family: Verdana;
+}
+
+#header {
+    display: flex;
+}
+
+#left, #right {
+    background-color: SeaGreen;
+    color: white;
+    line-height: 150px;
+    height: 260px;
+    font-size: 160%;
+}
+
+#left {
+    width: 75%;
+}
+
+#right {
+    width: 25%;
+    text-align: right;
+}
+
+#main {
+    background-color: MintCream;
+    padding: 80px;
+}
+
+#footer {
+    display: flex;
+}
+
+#footer-left, #footer-right {
+    background-color: SeaGreen;
+    color: white;
+    width: 50%;
+    height: 70px;
+    text-align: center;
+}
+
+img {
+    margin-right: 35px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+input, button {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    background-color: MintCream;
+    color: SeaGreen;
+    padding: 15px;
+    line-height: 70px;
+}
