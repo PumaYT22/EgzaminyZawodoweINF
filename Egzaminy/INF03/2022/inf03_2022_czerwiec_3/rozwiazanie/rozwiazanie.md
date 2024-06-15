@@ -1,271 +1,154 @@
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 1
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę,sql oraz stronę internetową z wskazanym html,css,php.
 
 ### Kod na Stronę Internetową
 
-#### index.html
+#### zawody.html
 
 ```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <title>Zawody wędkarskie</title>
+    <link rel="stylesheet" href="styl3.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
+    <section id="header">
+        <section id="left">
+            <h1>Zawody polskich wędkarzy</h1>
         </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
+        <section id="right">
+            <img src="zawody.jpg" alt="wędkowanie">
+        </section>
+    </section>
+    
+    <section id="main">
+        <h3>Łowiska</h3>
+        <ul>
+            <li>Zalew Węgrowski</li>
+            <li>Zbiornik Bukówka</li>
+            <li>Jeziorko Bartbetowskie</li>
+            <li>Warta-Obrzycko</li>
+        </ul>
+        
+        <h3>Dodaj zawody wędkarskie</h3>
+        <form action="zgloszenie.php" method="post">
+            <label for="lowisko">Łowisko: </label>
+            <input type="number" id="lowisko" name="lowisko"><br>
+            
+            <label for="data">Data: </label>
+            <input type="date" id="data" name="data"><br>
+            
+            <label for="sedzia">Sędzia: </label>
+            <input type="text" id="sedzia" name="sedzia"><br>
+            
+            <button type="reset">CZYŚĆ</button>
+            <button type="submit">DODAJ</button>
+        </form>
+    </section>
+    
+    <section id="footer">
+        <section id="footer-left">
+            <a href="kwerendy.txt">Pobierz</a>
+        </section>
+        <section id="footer-right">
+            <p>Stronę przygotował: 123456</p>
+        </section>
+    </section>
 </body>
 </html>
-
 ```
 
-#### uslugi.html
 
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Oferta</h2>
-            <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
-            </ol>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
+#### zgloszenie.php
 
-```
+```php
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $lowisko = $_POST['lowisko'];
+    $data = $_POST['data'];
+    $sedzia = $_POST['sedzia'];
 
-#### kontakt.html
+    $conn = new mysqli('localhost', 'root', '', 'wedkarstwo');
 
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <hr>
-            <p id="komunikat"></p>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+   
+    $sql = "INSERT INTO zawody_wedkarskie VALUES (NULL, '0','$lowisko', '$data', '$sedzia')";
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
-
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
-
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "Dodano do bazy danych";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    </script>
-</body>
-</html>
-
+    $conn->close();
+}
+?>
 ```
-#### styl.css
+#### styl3.css
 
 ```css
-/* Styl CSS */
-body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+    font-family: Verdana;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-header {
+#header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
+#left, #right {
+    background-color: SeaGreen;
+    color: white;
+    line-height: 150px;
+    height: 260px;
+    font-size: 160%;
 }
 
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#left {
+    width: 75%;
 }
 
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    color: Navy;
-    margin: 50px;
-    height: 400px;
-}
-
-footer {
+#right {
+    width: 25%;
     text-align: right;
-    background-color: LightBlue;
-    padding: 10px;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+#main {
+    background-color: MintCream;
+    padding: 80px;
 }
 
-button:hover {
-    opacity: 0.8;
+#footer {
+    display: flex;
 }
 
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
+#footer-left, #footer-right {
+    background-color: SeaGreen;
+    color: white;
+    width: 50%;
+    height: 70px;
+    text-align: center;
+}
+
+img {
+    margin-right: 35px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+input, button {
+    margin-bottom: 20px;
+}
+
+a {
     text-decoration: none;
-    margin: 10px;
-    padding: 5px;
-}
-
-nav.menu a:hover {
-    border: 1px solid Navy;
+    background-color: MintCream;
+    color: SeaGreen;
+    padding: 15px;
+    line-height: 70px;
 }
 
 ```
