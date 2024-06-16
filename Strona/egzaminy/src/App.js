@@ -12,16 +12,14 @@ function App() {
   return ( 
     <div className="App" >
         <HashRouter>
-          <Routes>
-            <Route path="https://PumaYT22.github.io/EgzaminyZawodoweINF" element={<Navbar />}>
-              <Route index element={<PageHome />} />
-              <Route path="https://PumaYT22.github.io/EgzaminyZawodoweINF/contact" element={<PageContact />} />
-              <Route path="https://PumaYT22.github.io/EgzaminyZawodoweINF/egzaminy" element={<PageEgzaminy />} />
-                  <Route path="https://PumaYT22.github.io/EgzaminyZawodoweINF/egzaminy/inf03" element={<INFtrojka />} />
-              
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          </Routes>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<PageHome />} />
+          <Route path="/contact" element={<PageContact />} />
+          <Route path="/egzaminy" element={<PageEgzaminy />} />
+          <Route path="/egzaminy/inf03" element={<INFtrojka />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
       </HashRouter>
     </div>
   );
