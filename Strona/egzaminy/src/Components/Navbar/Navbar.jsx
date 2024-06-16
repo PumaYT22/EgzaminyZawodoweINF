@@ -2,6 +2,8 @@ import React from 'react'
 import logo from '../../Assets/logo.png'
 import { Outlet, Link } from "react-router-dom";
 
+
+
 const Navbar = () => {
   return (
     <>
@@ -55,9 +57,9 @@ const Navbar = () => {
         </main>
     
 
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container">
-            <span class="text-muted">Aplikacja zrobiona przez NaukaOdZera ©️ 2024</span>
+    <footer className="footer mt-auto py-3 bg-dark">
+        <div className="container">
+            <span className="text-muted">Aplikacja zrobiona przez NaukaOdZera ©️ 2024</span>
         </div>
     </footer>
     </>

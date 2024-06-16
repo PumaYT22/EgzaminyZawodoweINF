@@ -6,6 +6,7 @@ import PageHome from './Pages/PageHome/PageHome';
 import NoPage from './Pages/NoPage/NoPage';
 import PageContact from './Pages/PageContcat/PageContact';
 import PageEgzaminy from './Pages/PageEgzaminy/PageEgzaminy';
+import INFtrojka from './Pages/PageEgzaminy/MiniPagesEgzamin/INF03/INFtrojka';
 
 function App() {
   return ( 
@@ -16,8 +17,8 @@ function App() {
               <Route index element={<PageHome />} />
               <Route path="/contact" element={<PageContact />} />
               <Route path="/egzaminy" element={<PageEgzaminy />} />
-              {/* <Route path="blogs" element={<Blogs />} />
-              <Route path="contact" element={<Contact />} /> */}
+                  <Route path="/egzaminy/inf03" element={<INFtrojka />} />
+              
               <Route path="*" element={<NoPage />} />
             </Route>
           </Routes>
