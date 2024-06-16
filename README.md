@@ -8,15 +8,6 @@ Znajdziesz tu:
 * **Przydatne materiały edukacyjne:** Dodatkowe wskazówki i materiały ułatwiające naukę.
 * **Ciągłe aktualizacje:** Nowe rozwiązania i materiały dodawane regularnie! 🆕
 
-## Linki społecznościowe
-
-Dołącz do społeczności NaukaOdZera i rozwijaj swoje umiejętności informatyczne!
-
-- Twitter/X: [NaukaOdZera](https://x.com/NaukaOdZera)
-- Youtube: [NaukaOdZera](https://www.youtube.com/@NaukaOdZera)
-- Tiktok: [NaukaOdZera](https://www.tiktok.com/@naukaodzera)
-- Instagram: [NaukaOdZera](https://www.instagram.com/naukaodzera/)
-
 ## Wsparcie projektu
 
 Chcesz pomóc w rozwoju EgzaminyZawodoweINF? Oto kilka sposobów:
