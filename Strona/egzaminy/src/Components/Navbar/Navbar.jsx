@@ -12,8 +12,8 @@ const Navbar = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
-                    <Link to="/" class="navbar-brand mt-1">
-                        <img src={logo} alt="Logo" width="50" height="44" class="d-inline-block align-text-center"/>
+                    <Link to="/" className="navbar-brand mt-1">
+                        <img src={logo} alt="Logo" width="50" height="44" className="d-inline-block align-text-center"/>
                         EgzaminyZawodoweINF
                     </Link>
                 
@@ -49,7 +49,7 @@ const Navbar = () => {
                 
         </nav>
 
-        <main class="flex-shrink-0">
+        <main className="flex-shrink-0">
             
             <Outlet />
             
