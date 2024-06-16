@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<PageHome />} />
           <Route path="/contact" element={<PageContact />} />
           <Route path="/egzaminy" element={<PageEgzaminy />} />
-          <Route path="/EgzaminyZawodoweINF/#/egzaminy/inf03" element={<INFtrojka />} />
+          <Route path="/egzaminy/inf03" element={<INFtrojka />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </HashRouter>
