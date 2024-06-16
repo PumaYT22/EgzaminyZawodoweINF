@@ -57,11 +57,11 @@ const Navbar = () => {
         </main>
     
 
-    <footer className="footer mt-auto py-3 bg-dark">
+    {/* <footer className="footer mt-auto py-3 bg-dark">
         <div className="container">
             <span className="text-muted">Aplikacja zrobiona przez NaukaOdZera ©️ 2024</span>
         </div>
-    </footer>
+    </footer> */}
     </>
   )
 }
