@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/EgzaminyZawodoweINF/static/css/main.99af1b61.css",
+    "main.js": "/EgzaminyZawodoweINF/static/js/main.05b36652.js",
+    "static/js/453.4072992b.chunk.js": "/EgzaminyZawodoweINF/static/js/453.4072992b.chunk.js",
+    "static/media/egz1.jpg": "/EgzaminyZawodoweINF/static/media/egz1.9ba0183330fc2d77497a.jpg",
+    "static/media/egz2.jpg": "/EgzaminyZawodoweINF/static/media/egz2.cbc94405d8ec34608d22.jpg",
+    "static/media/logo.png": "/EgzaminyZawodoweINF/static/media/logo.912b09f45a2be369a42b.png",
+    "index.html": "/EgzaminyZawodoweINF/index.html",
+    "main.99af1b61.css.map": "/EgzaminyZawodoweINF/static/css/main.99af1b61.css.map",
+    "main.05b36652.js.map": "/EgzaminyZawodoweINF/static/js/main.05b36652.js.map",
+    "453.4072992b.chunk.js.map": "/EgzaminyZawodoweINF/static/js/453.4072992b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99af1b61.css",
+    "static/js/main.05b36652.js"
+  ]
+}
