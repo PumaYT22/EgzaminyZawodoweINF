@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <HashRouter>
         <Routes>
-          <Route path="/EgzaminyZawodoweINF" element={<Navbar />}>
+          <Route path="/" element={<Navbar />}>
             <Route index element={<PageHome />} />
-            <Route path="/EgzaminyZawodoweINF/contact" element={<PageContact />} />
-            <Route path="/EgzaminyZawodoweINF/egzaminy" element={<PageEgzaminy />} />
-            <Route path="/EgzaminyZawodoweINF/egzaminy/inf03" element={<INFtrojka />} />
+            <Route path="/contact" element={<PageContact />} />
+            <Route path="/egzaminy" element={<PageEgzaminy />} />
+            <Route path="/egzaminy/inf03" element={<INFtrojka />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

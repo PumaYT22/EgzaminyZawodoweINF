@@ -15,7 +15,7 @@ const PageEgzaminy = () => {
                                 <p className="card-text">Sprawdź rozwiązania do egzaminu INF03, który obejmuje projektowanie stron,obróbka grafiki lub dźwieku oraz tworzenie i zarządzanie bazami danych.
                                     Na tym egzaminie głównie posługujesz się sql,html,css,php.
                                 </p>
-                                <a href="/EgzaminyZawodoweINF/egzaminy/inf03" className="btn btn-primary">Sprawdź Rozwiązania arkuszy</a>
+                                <a href="/egzaminy/inf03" className="btn btn-primary">Sprawdź Rozwiązania arkuszy</a>
                             </div>
                         </div>
                     </div>

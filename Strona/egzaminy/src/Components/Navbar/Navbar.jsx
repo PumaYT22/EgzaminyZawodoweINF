@@ -12,7 +12,7 @@ const Navbar = () => {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
-                    <Link to="/EgzaminyZawodoweINF" class="navbar-brand mt-1">
+                    <Link to="/" class="navbar-brand mt-1">
                         <img src={logo} alt="Logo" width="50" height="44" class="d-inline-block align-text-center"/>
                         EgzaminyZawodoweINF
                     </Link>
@@ -20,18 +20,18 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/EgzaminyZawodoweINF">
+                            <Link className="nav-link active" aria-current="page" to="/">
                                 Strona Główna
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/EgzaminyZawodoweINF/egzaminy">Egzaminy</Link>
+                            <Link className="nav-link" to="/egzaminy">Egzaminy</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/EgzaminyZawodoweINF/materialy">Materiały</a>
+                            <a className="nav-link" href="/materialy">Materiały</a>
                         </li>
                         <li className="nav-item">
-                            <Link to="/EgzaminyZawodoweINF/contact" className="nav-link">Kontakt</Link>
+                            <Link to="/contact" className="nav-link">Kontakt</Link>
                         </li>
                         <li className="nav-item">
                             <a className='nav-link' href="https://github.com/PumaYT22/EgzaminyZawodoweINF" rel="noreferrer" target='_blank'>
