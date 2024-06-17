@@ -232,6 +232,13 @@ const INFtrojka = () => {
         setFilteredData(filtered);
     }, [searchTerm, selectedYear, selectedQualification, data]);
 
+    const getAvailableYears = (qualification) => {
+        if (qualification === 'E14') return ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
+        if (qualification === 'INF03') return ['2021', '2022', '2023', '2024'];
+        if (qualification === 'EE09') return ['2020', '2021', '2022', '2023', '2024'];
+        return ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
+    };
+
     // Oblicz ilość stron
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
@@ -240,13 +247,13 @@ const INFtrojka = () => {
 
     return (
         <Container>
-            <h1 className="my-4">Lista arkuszy E14/EE09/INF03</h1>
+            <h1 className="my-4">Exam List</h1>
             <Form>
                 <Row className="mb-3">
                     <Col>
                         <Form.Control 
                             type="text" 
-                            placeholder="Wyszukaj po name" 
+                            placeholder="Search by name" 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -257,8 +264,8 @@ const INFtrojka = () => {
                             value={selectedYear}
                             onChange={(e) => setSelectedYear(e.target.value)}
                         >
-                            <option value="">Wszystkie Lata</option>
-                            {Array.from(new Set(data.map(item => item.year))).map((year, index) => (
+                            <option value="">Select Year</option>
+                            {getAvailableYears(selectedQualification).map((year, index) => (
                                 <option key={index} value={year}>{year}</option>
                             ))}
                         </Form.Control>
@@ -267,9 +274,12 @@ const INFtrojka = () => {
                         <Form.Control 
                             as="select" 
                             value={selectedQualification}
-                            onChange={(e) => setSelectedQualification(e.target.value)}
+                            onChange={(e) => {
+                                setSelectedQualification(e.target.value);
+                                setSelectedYear(''); // Reset year when qualification changes
+                            }}
                         >
-                            <option value="">Wszystkie Klasyfikacje</option>
+                            <option value="">Select Qualification</option>
                             {Array.from(new Set(data.map(item => item.qualification))).map((qualification, index) => (
                                 <option key={index} value={qualification}>{qualification}</option>
                             ))}
