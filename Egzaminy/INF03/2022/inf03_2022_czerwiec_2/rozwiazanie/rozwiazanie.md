@@ -1,4 +1,4 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 1
+# Rozwiązanie arkusza INF 03 czerwiec 2022 - 2
 
 W tym arkuszu trzeba było wykonać grafikę (przeskalować oraz dodać przeźroczystość do obrazu) 
 i zapytania sql oraz stronę internetową z wskazanym html,css,js.
