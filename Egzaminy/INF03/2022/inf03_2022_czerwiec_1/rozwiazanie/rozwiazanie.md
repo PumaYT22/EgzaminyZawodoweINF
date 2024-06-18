@@ -1,4 +1,4 @@
-# Rozwiązanie arkusza INF 03 czerwiec 2024 - 1
+# Rozwiązanie arkusza INF 03 czerwiec 2022 - 1
 
 W tym arkuszu trzeba było wykonać grafikę (przeskalować),sql oraz stronę internetową z wskazanym html,css,php.
 
