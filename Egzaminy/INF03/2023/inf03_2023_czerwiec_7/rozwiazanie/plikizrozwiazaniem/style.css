@@ -1,0 +1,46 @@
+* {
+    font-family: Tahoma;
+}
+
+header, footer {
+    background-color: SaddleBrown;
+    color: white;
+    padding: 3px;
+    text-align: center;
+}
+
+#left-panel, #right-panel {
+    background-color: Tan;
+    height: 400px;
+    width: 40%;
+    float: left;
+}
+
+#middle-panel {
+    background-color: Wheat;
+    height: 400px;
+    width: 20%;
+    float: left;
+}
+
+img {
+    margin-right: 20px;
+    float: right;
+}
+
+h4 {
+    text-align: center;
+}
+
+input[type="text"], input[type="number"] {
+    margin: 5px;
+}
+
+ol li:hover {
+    background-color: Sienna;
+    color: white;
+}
+
+footer {
+    clear: both;
+}

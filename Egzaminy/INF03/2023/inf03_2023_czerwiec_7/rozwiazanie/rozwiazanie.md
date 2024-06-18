@@ -1,271 +1,156 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 1
+# Rozwiązanie arkusza INF 03 czerwiec 2023 - 7
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę (przeskalowanie),sql oraz stronę internetową z wskazanym html,css,js.
+
+### Zapytania sql
+
+```sql
+1. INSERT INTO czytelnicy(`imie`, `nazwisko`, `kod`) VALUES ('Ewelina', 'Romanowska', '56677');
+2. SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko;
+3. SELECT tytul FROM ksiazki JOIN autorzy ON ksiazki.id_autor = autorzy.id WHERE nazwisko = 'Sienkiewicz';
+4. SELECT nazwisko, COUNT(tytul) AS ile_tytulow FROM autorzy JOIN ksiazki ON ksiazki.id_autor = autorzy.id GROUP BY nazwisko;
+```
 
 ### Kod na Stronę Internetową
 
-#### index.html
+#### biblioteka.html
 
-```html
+```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <title>Biblioteka</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
+    <header>
+        <h1>Biblioteka w Książkowicach Małych</h1>
+    </header>
+    <section id="left-panel">
+        <h4>Dodaj czytelnika</h4>
+        <form action="biblioteka.php" method="post">
+            <label for="name">imię:</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="surname">nazwisko:</label>
+            <input type="text" id="surname" name="surname"><br>
+            <label for="symbol">symbol:</label>
+            <input type="number" id="symbol" name="symbol"><br>
+            <button type="submit">AKCEPTUJ</button>
+        </form>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = $_POST['name'];
+            $surname = $_POST['surname'];
+            $symbol = $_POST['symbol'];
 
-```
+            // Połączenie z bazą danych
+            $conn = new mysqli('localhost', 'root', '', 'biblioteka');
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-#### uslugi.html
+            // Dodanie czytelnika do bazy danych
+            $sql = "INSERT INTO czytelnicy (imie, nazwisko, kod) VALUES ('$name', '$surname', $symbol)";
+            if ($conn->query($sql) === TRUE) {
+                echo "Dodano czytelnika $name $surname";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
 
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Oferta</h2>
-            <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
-            </ol>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### kontakt.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <hr>
-            <p id="komunikat"></p>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
-
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
-
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
+            $conn->close();
         }
-    }
+        ?>
+    </section>
+    <section id="middle-panel">
+        <img src="biblioteka.png" alt="biblioteka">
+        <h6>ul. Czytelników&nbsp;15; Książkowice Małe</h6>
+        <p><a href="mailto:biuro@bib.pl">Czy masz jakieś uwagi?</a></p>
+        
+    </section>
+    <section id="right-panel">
+        <h4>Nasi czytelnicy:</h4>
+        <ol>
+        <?php
+        // Połączenie z bazą danych
+        $conn = new mysqli('localhost', 'root', '', 'biblioteka');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-    </script>
+        // Pobranie listy czytelników
+        $sql = "SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko;";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<li>" . $row["imie"]. " " . $row["nazwisko"]. "</li>";
+            }
+        } else {
+            echo "0 results";
+        }
+
+        $conn->close();
+        ?>
+        </ol>
+    </section>
+    <footer>
+        <p>Projekt witryny: NaukaOdZera</p>
+    </footer>
 </body>
 </html>
-
 ```
-#### styl.css
+
+
+#### style.css
 
 ```css
-/* Styl CSS */
-body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+    font-family: Tahoma;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+header, footer {
+    background-color: SaddleBrown;
+    color: white;
+    padding: 3px;
+    text-align: center;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    color: Navy;
-    margin: 50px;
+#left-panel, #right-panel {
+    background-color: Tan;
     height: 400px;
+    width: 40%;
+    float: left;
+}
+
+#middle-panel {
+    background-color: Wheat;
+    height: 400px;
+    width: 20%;
+    float: left;
+}
+
+img {
+    margin-right: 20px;
+    float: right;
+}
+
+h4 {
+    text-align: center;
+}
+
+input[type="text"], input[type="number"] {
+    margin: 5px;
+}
+
+ol li:hover {
+    background-color: Sienna;
+    color: white;
 }
 
 footer {
-    text-align: right;
-    background-color: LightBlue;
-    padding: 10px;
+    clear: both;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 10px;
-    padding: 5px;
-}
-
-nav.menu a:hover {
-    border: 1px solid Navy;
-}
 
 ```
