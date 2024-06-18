@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Pagination, Form, Table, Container, Row, Col } from 'react-bootstrap';
 
-import axios from 'axios';
-
-
-const repoOwner = 'PumaYT22';
-const repoName = 'EgzaminyZawodoweINF';
 
 
 const obj={
@@ -176,7 +171,7 @@ const obj={
             "inf03_2023_styczen_5": [{name: "usługi informatyczne", lang: "php", desc: "opis arkusza", year: "2023", month: "styczen"}]
         },
         2024: {
-            "inf03_2024_styczen_1": [{name: "usługi informatyczne", lang: "php", desc: "opis arkusza", year: "2024", month: "styczen"}],
+            "inf03_2024_styczen_1": [{name: "usługi informatyczne", lang: "js", desc: "opis arkusza", year: "2024", month: "styczen"}],
             "inf03_2024_styczen_10": [{name: "usługi informatyczne", lang: "php", desc: "opis arkusza", year: "2024", month: "styczen"}],
             "inf03_2024_styczen_11": [{name: "usługi informatyczne", lang: "php", desc: "opis arkusza", year: "2024", month: "styczen"}],
             "inf03_2024_styczen_12": [{name: "usługi informatyczne", lang: "php", desc: "opis arkusza", year: "2024", month: "styczen"}],
@@ -201,6 +196,8 @@ const INFtrojka = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedYear, setSelectedYear] = useState('');
     const [selectedQualification, setSelectedQualification] = useState('');
+    const [selectedLanguage, setSelectedLanguage] = useState('');
+
     const itemsPerPage = 5;
 
     useEffect(() => {
@@ -227,10 +224,11 @@ const INFtrojka = () => {
             const matchesSearchTerm = item.name.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesYear = selectedYear ? item.year === selectedYear : true;
             const matchesQualification = selectedQualification ? item.qualification === selectedQualification : true;
-            return matchesSearchTerm && matchesYear && matchesQualification;
+            const matchesLanguage = selectedLanguage ? item.lang.toLowerCase() === selectedLanguage.toLowerCase() : true;
+            return matchesSearchTerm && matchesYear && matchesQualification && matchesLanguage;
         });
         setFilteredData(filtered);
-    }, [searchTerm, selectedYear, selectedQualification, data]);
+    }, [searchTerm, selectedYear, selectedQualification, selectedLanguage, data]);
 
     const getAvailableYears = (qualification) => {
         if (qualification === 'E14') return ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
@@ -238,6 +236,22 @@ const INFtrojka = () => {
         if (qualification === 'EE09') return ['2020', '2021', '2022', '2023', '2024'];
         return ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
     };
+
+    const getAvailableLanguages = () => {
+        const languages = ['php', 'js']; // Dodaj inne dostępne języki
+        return languages;
+    };
+
+ 
+    const descriptionExam = (description) => {
+        window.alert(description);
+    };
+
+    const goToSolution = (klasyfikacja, rok, examId) => {
+        const url = `#/rozwiazanie/${klasyfikacja}/${rok}/${examId}`;
+        window.open(url, '_blank');
+    };
+    
 
     // Oblicz ilość stron
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
@@ -247,80 +261,116 @@ const INFtrojka = () => {
 
     return (
         <Container>
-            <h1 className="my-4">Exam List</h1>
+            <h1 className="my-4">Lista arkuszy</h1>
             <Form>
                 <Row className="mb-3">
-                    <Col>
+                    <Col xs={11} sm={6} md={3} className="mb-3">
                         <Form.Control 
                             type="text" 
-                            placeholder="Search by name" 
+                            placeholder="Wyszukaj po nazwie" 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </Col>
-                    <Col>
+                    <Col xs={11} sm={6} md={3} className="mb-3">
                         <Form.Control 
                             as="select" 
+                            className='form-select'
                             value={selectedYear}
                             onChange={(e) => setSelectedYear(e.target.value)}
                         >
-                            <option value="">Select Year</option>
+                            <option value="">Wszystkie lata</option>
                             {getAvailableYears(selectedQualification).map((year, index) => (
                                 <option key={index} value={year}>{year}</option>
                             ))}
                         </Form.Control>
                     </Col>
-                    <Col>
+                    <Col xs={11} sm={6} md={3} className="mb-3">
                         <Form.Control 
                             as="select" 
+                            className='form-select'
                             value={selectedQualification}
                             onChange={(e) => {
                                 setSelectedQualification(e.target.value);
                                 setSelectedYear(''); // Reset year when qualification changes
                             }}
                         >
-                            <option value="">Select Qualification</option>
+                            <option value="">Wszystkie Klasyfikacje</option>
                             {Array.from(new Set(data.map(item => item.qualification))).map((qualification, index) => (
                                 <option key={index} value={qualification}>{qualification}</option>
                             ))}
                         </Form.Control>
                     </Col>
+                    <Col xs={11} sm={6} md={3} className="mb-3">
+                        <Form.Control 
+                            as="select" 
+                            className='form-select'
+                            value={selectedLanguage}
+                            onChange={(e) => setSelectedLanguage(e.target.value === 'All' ? '' : e.target.value)}
+                        >
+                            <option value="All">Wszystkie języki</option>
+                            {getAvailableLanguages().map((language, index) => (
+                                <option key={index} value={language}>{language}</option>
+                            ))}
+                        </Form.Control>
+                    </Col>
                 </Row>
             </Form>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th>Year</th>
-                        <th>Month</th>
-                        <th>Qualification</th>
-                        <th>Exam ID</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentItems.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.name}</td>
-                            <td>{item.lang}</td>
-                            <td>{item.desc}</td>
-                            <td>{item.year}</td>
-                            <td>{item.month}</td>
-                            <td>{item.qualification}</td>
-                            <td>{item.examId}</td>
+            <div style={{ overflowX: 'auto' }}>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Language</th>
+                            <th>Description</th>
+                            <th>Rozwiązanie</th>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Qualification</th>
+                            <th>Exam ID</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {currentItems.map((item, index) => (
+                            <tr key={index}>
+                                <td>{item.name}</td>
+                                <td>{item.lang}</td>
+                                <td><button className='btn btn-outline-primary' onClick={() => descriptionExam(item.desc)}>Opis Arkusza</button></td>
+                                <td><button className='btn btn-outline-primary' onClick={() => goToSolution(item.qualification, item.year, item.examId)}
+                                    >Rozwiązanie</button></td>
+                                <td>{item.year}</td>
+                                <td>{item.month}</td>
+                                <td>{item.qualification}</td>
+                                <td>{item.examId}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
             <Pagination>
+                <Pagination.First onClick={() => setCurrentPage(1)} />
                 <Pagination.Prev onClick={() => setCurrentPage(currentPage > 1 ? currentPage - 1 : 1)} />
-                {[...Array(totalPages).keys()].map(number => (
-                    <Pagination.Item key={number + 1} active={number + 1 === currentPage} onClick={() => setCurrentPage(number + 1)}>
-                        {number + 1}
-                    </Pagination.Item>
-                ))}
+
+                {[...Array(totalPages).keys()].map(number => {
+                    if (number + 1 === 1 || number + 1 === totalPages || (number + 1 >= currentPage - 2 && number + 1 <= currentPage + 2)) {
+                        return (
+                            <Pagination.Item
+                                key={number + 1}
+                                active={number + 1 === currentPage}
+                                onClick={() => setCurrentPage(number + 1)}
+                            >
+                                {number + 1}
+                            </Pagination.Item>
+                        );
+                    }
+                    if (number + 1 === currentPage - 3 || number + 1 === currentPage + 3) {
+                        return <Pagination.Ellipsis key={number + 1} />;
+                    }
+                    return null;
+                })}
+
                 <Pagination.Next onClick={() => setCurrentPage(currentPage < totalPages ? currentPage + 1 : totalPages)} />
+                <Pagination.Last onClick={() => setCurrentPage(totalPages)} />
             </Pagination>
         </Container>
     );

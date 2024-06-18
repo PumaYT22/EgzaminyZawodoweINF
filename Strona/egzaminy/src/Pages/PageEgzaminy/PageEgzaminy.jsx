@@ -27,7 +27,7 @@ const PageEgzaminy = () => {
                                 <p className="card-text">Sprawdź rozwiązania do egzaminu INF04, koncentrującego się na programowaniu aplikacji i zarządzaniu systemami operacyjnymi.
                                     Na tym arkuszu tworzysz głównie aplikacje w React,Android Studio,WPF,Express oraz konsolowe.
                                 </p>
-                                <a href="#" className="btn btn-primary">Sprawdź Rozwiązania arkuszy</a>
+                                <a href="#brak" className="btn btn-primary disabled">Sprawdź Rozwiązania arkuszy</a>
                             </div>
                         </div>
                     </div>

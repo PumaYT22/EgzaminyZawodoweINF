@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../Assets/logo.png'
+import { Link } from "react-router-dom";
 
 const PageHome = () => {
   return (
@@ -13,9 +14,9 @@ const PageHome = () => {
                    które pomogą Ci osiągnąć sukces na egzaminie.</p>
 
                 <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" className="btn btn-primary btn-lg px-4 gap-3">Egzaminy</button>
-                    <button type="button" className="btn btn-outline-secondary btn-lg px-4">Kontakt</button>
-                    <button type="button" className="btn btn-info btn-lg px-4 text-light">Materiały</button>
+                    <Link to="/egzaminy"><button type="button" className="btn btn-primary btn-lg px-4 gap-3">Egzaminy</button></Link>
+                    <Link to="/contact"><button type="button" className="btn btn-outline-secondary btn-lg px-4">Kontakt</button></Link>
+                   <button type="button" className="btn btn-info btn-lg px-4 text-light disabled">Materiały</button>
                 </div>
                 </div>
             </div>

@@ -9,8 +9,7 @@
 /coverage
 
 # production
-/build
-/src
+/Strona
 
 # misc
 .DS_Store
