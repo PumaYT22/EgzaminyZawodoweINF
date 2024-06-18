@@ -1,4 +1,4 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 2
+# Rozwiązanie arkusza INF 03 styczeń 2024 - 9
 
 W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html, css, js.
 
