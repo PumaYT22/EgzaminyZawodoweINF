@@ -5,6 +5,8 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 ![pogotowieratunkowe.png](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/baner1.png)
 
+[<img alt="alt_text" src="https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/baner1.png" />](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/baner1.png)
+
 ## Kod na Stronę Internetową
 
 **Index.html**
