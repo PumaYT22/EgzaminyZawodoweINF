@@ -3,7 +3,7 @@
 W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html, css, js.
 
 
-![konsola1.png](plikizrozwiazaniem/baner1.png)
+![pogotowieratunkowe.png](plikizrozwiazaniem/baner1.png)
 
 ## Kod na Stronę Internetową
 
