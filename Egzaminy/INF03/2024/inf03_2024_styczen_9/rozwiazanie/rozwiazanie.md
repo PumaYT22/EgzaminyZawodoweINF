@@ -10,7 +10,7 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 **Index.html**
 
 ```html
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
