@@ -3,7 +3,7 @@
 W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html, css, js.
 
 
-![pogotowieratunkowe.png](plikizrozwiazaniem/baner1.png)
+![pogotowieratunkowe.png](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/baner1.png)
 
 ## Kod na Stronę Internetową
 
