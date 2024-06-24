@@ -29,7 +29,7 @@
 ## Kod na Stronę Internetową
 
 <CodeGroup>
-  <CodeGroupItem title="index.html">
+    <CodeGroupItem title="index.html">
       
 ### Index.html
       
@@ -81,9 +81,8 @@
 - W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
 - Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
-  </CodeGroupItem>
-  
-  <CodeGroupItem title="kontakt.html">
+    </CodeGroupItem>
+    <CodeGroupItem title="kontakt.html">
       
 ### Kontakt.html
 
@@ -189,8 +188,7 @@
     </blockquote>
             
     </CodeGroupItem>
-  
-  <CodeGroupItem title="styl.css">
+    <CodeGroupItem title="styl.css">
 
 ### Styl.css
 
@@ -245,7 +243,7 @@ button:hover {
 - Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
 - Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
 
-  </CodeGroupItem>
+    </CodeGroupItem>
 </CodeGroup>
 
 
