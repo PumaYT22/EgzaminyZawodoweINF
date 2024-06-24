@@ -196,9 +196,8 @@ kw4: ALTER TABLE Ryby ADD dobowy_limit TINYINT UNSIGNED;
 - W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
 - Skrypt JavaScript `wyslijFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `paragraf`.
         
-    </CodeGroupItem>
-    
-    <CodeGroupItem title="styl.css">
+</CodeGroupItem>   
+<CodeGroupItem title="styl.css">
 
 ### Styl.css
 
