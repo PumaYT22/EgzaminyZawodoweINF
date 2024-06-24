@@ -27,110 +27,137 @@
 ---
 
 <CodeGroup>
-  <CodeGroupItem title="index.html">
+  <CodeGroupItem title="wedkuj.php">
 
 ```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="favicon.png">
-    <title>Komputery</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wędkowanie</title>
+    <link rel="stylesheet" href="styl_1.css">
 </head>
 <body>
-    <div id="container">
-        <div id="baner">
-            <img src="animacja.gif" alt="Pogotowie komputerowe">
-        </div>
-        <div id="menu">
-            <a href="index.html">Strona Główna</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
-        <div id="glowny1">
-            <h3>Kim Jesteśmy?</h3>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-        </div>
-        <div id="glowny2">
-            <h3>Co robimy?</h3>
-            <ul>
-                <li>naprawa komputerów</li>
-                <li>odzyskiwanie danych</li>
-                <li>wirusy</li>
-                <li>konfiguracja LAN</li>
-            </ul>
-        </div>
-        <div id="glowny3">
-            <h3>Jaki jest nasz znak?</h3>
-            <img src="favicon.png" alt="Doświadczenie i niezawodność">
-        </div>
-        <div id="stopka">
-            Autor: <em>NaukaOdZera</em>
-        </div>
-    </div>
+    <header> <!-- Blok banera -->
+        <h1>Portal dla wędkarzy</h1>
+    </header>
+    <main>  <!-- Kontener na bloki lewe i prawy-->
+        <section> <!-- Kontener na dwa bloki lewe -->
+            <div> <!-- Blok lewy 1. -->
+                <h3>Ryby zamieszkujące rzeki</h3>
+                <ol>
+                    <!-- <?php
+                        Miejsce na skrypt 1.
+                    ?> -->
+                </ol>
+            </div>
+            <div> <!-- Blok lewy 2. -->
+                <h3>Ryby drapieżne naszych wód</h3>
+                <table>
+                    <tr>
+                        <th>L.p.</th>
+                        <th>Gatunek</th>
+                        <th>Występowanie</th>
+                    </tr>
+                    <!-- <?php
+                        Miejsce na skrypt 2.
+                    ?> -->
+                </table>
+            </div>
+        </section>
+        <section> <!-- Blok prawy -->
+            <img src="ryba1.jpg" alt="Sum">
+            <a href="kwerendy.txt">Pobierz kwerendy</a>
+        </section>
+    </main>
+    <footer>
+        <p>Stronę wykonał: Wojciech Chrzan Worshox</p>
+    </footer>
 </body>
 </html>
 ```
-**Wyjaśnienie:**
-- Ten plik HTML definiuje strukturę strony głównej.
-- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
-- Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
   </CodeGroupItem>
-
-    <CodeGroupItem title="styl.css">
+  <CodeGroupItem title="styl_1.css">
 
 ```css
-body {
-    background-color: #E0F7FA;
-    font-family: Arial, Helvetica, sans-serif;
+/* Formatowanie z egzaminu */
+
+* {
+    font-family: Helvetica;
+}
+
+header, footer {
+    background-color: #008387;
+    color: white;
+    padding: 5px;
+    font-size: 130%;
     text-align: center;
 }
-#container {
-    width: 95%;
+
+section div {
+    background-color: #EFEFEF;
+    width: 55%;
+}
+
+section div:first-child {
+    height: 150px;
+}
+
+section div:last-child {
+    height: 300px;
+}
+
+section:last-child {
+    background-color: #4FB3BF;
+    width: 45%;
+    height: 450px;
+    text-align: center;
+}
+
+img {
+    box-shadow: 10px 10px 7px DimGray;
+    margin: 20px;
+}
+
+table, th, td {
+    border: 1px solid #4FB3BF;
+    border-collapse: collapse;
+}
+
+table {
     margin: auto;
+    width: 80%;
 }
-#baner {
-    background-color: #00838F;
-    height: 200px;
+
+th, td {
+    padding: 4px;
 }
-#menu {
-    background-color: #006064;
-    padding: 15px;
+
+tr:hover {
+    background-color: #4FB3BF;
 }
-#menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 150%;
+
+/* Dodatkowe formatowanie do poprawnego układu bloków */
+
+main {
+    display: flex;
 }
-#glowny1, #glowny2, #glowny3 {
-    float: left;
-    height: 350px;
-    width: 33%;
+
+section:first-child {
+    width: 55%;
 }
-#stopka {
-    clear: both;
-    background-color: #006064;
-    color: white;
-    text-align: right;
-    padding: 10px;
+
+section div {
+    width: 100%;
 }
-ul {
-    text-align: left;
-}
-button {
-    background-color: #00838F;
-    color: white;
-}
-button:hover {
-    color: #80DEEA;
+
+h3 {
+    margin-block: 0;
 }
 ```
-**Wyjaśnienie:**
-- Arkusz stylów CSS definiuje wygląd strony.
-- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
-- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
-
 
   </CodeGroupItem>
 </CodeGroup>
