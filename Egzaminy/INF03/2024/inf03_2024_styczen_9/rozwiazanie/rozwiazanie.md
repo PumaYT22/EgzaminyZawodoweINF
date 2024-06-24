@@ -180,14 +180,9 @@
 - Plik HTML dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
 - W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
 - Skrypt JavaScript `wyslijFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `paragraf`.
-
-  <blockquote className="warning">
-                <strong>UWAGA: Załączanie skryptu</strong>
-                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą  
-                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
-    </blockquote>
-            
+        
     </CodeGroupItem>
+    
     <CodeGroupItem title="styl.css">
 
 ### Styl.css
