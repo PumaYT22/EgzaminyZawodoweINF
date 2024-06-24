@@ -19,7 +19,10 @@
 
 ## Wprowadzenie
 
-> **Cel zadania**: Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
+<blockquote class="introduction">
+  𝗖𝗲𝗹 𝘇𝗮𝗱𝗮𝗻𝗶𝗮: Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
+</blockquote>
+
 
 ---
 
@@ -27,7 +30,7 @@
 
 ### Index.html
 
-```html
+```html{27-43}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
