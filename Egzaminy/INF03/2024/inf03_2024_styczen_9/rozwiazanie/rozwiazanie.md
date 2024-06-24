@@ -1,6 +1,6 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 9 🚀
+---
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym HTML, CSS, JS.
+# Rozwiązanie arkusza INF 03 styczeń 2024 - 9
 
 ![Animacja](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/animacja.gif)
 
@@ -8,12 +8,12 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 ## Spis Treści
 
-1. [Wprowadzenie](#wprowadzenie)
-2. [Kod na Stronę Internetową](#kod-na-stronę-internetową)
-    - [Index.html](#indexhtml)
-    - [Kontakt.html](#kontakthtml)
-    - [Styl.css](#stylcss)
-3. [Podsumowanie](#podsumowanie)
+1. Wprowadzenie
+2. Kod na Stronę Internetową
+    - Index.html
+    - Kontakt.html
+    - Styl.css
+3. Podsumowanie
 
 ---
 
@@ -25,7 +25,7 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 ## Kod na Stronę Internetową
 
-**Index.html**
+### Index.html
 
 ```html
 <!DOCTYPE html>
@@ -37,13 +37,11 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
     <title>Komputery</title>
 </head>
 <body>
-    <div id="container" >
+    <div id="container">
         <div id="baner">
-
             <img src="animacja.gif" alt="Pogotowie komputerowe">
         </div>
         <div id="menu">
-
             <a href="index.html">Strona Główna</a>
             <a href="kontakt.html">Kontakt</a>
         </div>
@@ -57,7 +55,7 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
                 <li>naprawa komputerów</li>
                 <li>odzyskiwanie danych</li>
                 <li>wirusy</li>
-                <li> konfiguracja LAN</li>
+                <li>konfiguracja LAN</li>
             </ul>
         </div>
         <div id="glowny3">
@@ -71,7 +69,13 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 </body>
 </html>
 ```
-**kontakt.html**
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
+
+### Kontakt.html
+
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -82,66 +86,61 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
     <title>Komputery</title>
 </head>
 <body>
-    <div id="container" >
+    <div id="container">
         <div id="baner">
-
             <img src="animacja.gif" alt="Pogotowie komputerowe">
         </div>
         <div id="menu">
-
             <a href="index.html">Strona Główna</a>
             <a href="kontakt.html">Kontakt</a>
         </div>
-        <div id="glowny1">
-        </div>
+        <div id="glowny1"></div>
         <div id="glowny2">
             <h2>Kontakt</h2>
             <form>
-            <table>
-                <tr>
-                    <td>Imię: </td>
-                    <td> <input type="text" name="imie" id="imie"> </td>
-                </tr>
-                <tr>
-                    <td>Nazwisko: </td>
-                    <td> <input type="text" name="nazwisko" id="nazwisko"> </td>
-                </tr>
-                <tr>
-                    <td>Email: </td>
-                    <td> <input type="text" name="email" id="email"></td>
-                </tr>
-                <tr>
-                    <td>Zgłoszenie: </td>
-                    <td> 
-                        <select name="lista" id="lista">
-                            <option value="naprawa komputerów">naprawa komputerów</option>
-                            <option value="odzyskiwanie danych">odzyskiwanie danych</option>
-                            <option value="wirusy">wirusy</option>
-                            <option value="konfiguracja LAN">konfiguracja LAN</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="checkbox" checked>Wyślij kopię wiadomości
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <button type="reset">Czyść</button>
-                        
-                        <button type="button" onclick="wyslijFormularz()">Wyślij</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                <table>
+                    <tr>
+                        <td>Imię: </td>
+                        <td><input type="text" name="imie" id="imie"></td>
+                    </tr>
+                    <tr>
+                        <td>Nazwisko: </td>
+                        <td><input type="text" name="nazwisko" id="nazwisko"></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="text" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Zgłoszenie: </td>
+                        <td>
+                            <select name="lista" id="lista">
+                                <option value="naprawa komputerów">naprawa komputerów</option>
+                                <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                                <option value="wirusy">wirusy</option>
+                                <option value="konfiguracja LAN">konfiguracja LAN</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" checked>Wyślij kopię wiadomości
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="reset">Czyść</button>
+                            <button type="button" onclick="wyslijFormularz()">Wyślij</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
             <hr>
-            <p id="paragraf"> </p>
+            <p id="paragraf"></p>
         </div>
-        <div id="glowny3">
-        </div>
+        <div id="glowny3"></div>
         <div id="stopka">
             Autor: <em>NaukaOdZera</em>
         </div>
@@ -166,54 +165,65 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 </body>
 </html>
 ```
-**styl.css**
+**Wyjaśnienie:**
+- Plik HTML dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
+- W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
+- Skrypt JavaScript `wyslijFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `paragraf`.
+
+### Styl.css
+
 ```css
 body {
     background-color: #E0F7FA;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-#container{
+#container {
     width: 95%;
     margin: auto;
 }
-#baner{
+#baner {
     background-color: #00838F;
     height: 200px;
 }
-#menu{
+#menu {
     background-color: #006064;
     padding: 15px;
 }
-#menu a{
+#menu a {
     color: white;
     text-decoration: none;
     font-size: 150%;
 }
-
-#glowny1, #glowny2, #glowny3{
+#glowny1, #glowny2, #glowny3 {
     float: left;
     height: 350px;
     width: 33%;
 }
-#stopka{
+#stopka {
     clear: both;
     background-color: #006064;
     color: white;
     text-align: right;
     padding: 10px;
 }
-ul{
+ul {
     text-align: left;
 }
-button{
+button {
     background-color: #00838F;
-    color:white;
+    color: white;
 }
-button:hover{
-    color:#80DEEA;
+button:hover {
+    color: #80DEEA;
 }
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+---
 
 ## Podsumowanie
 
@@ -228,4 +238,3 @@ button:hover{
 Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
 
 Autor: *NaukaOdZera*
-
