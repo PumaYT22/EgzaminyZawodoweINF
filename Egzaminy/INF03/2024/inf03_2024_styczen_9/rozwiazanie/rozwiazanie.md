@@ -2,7 +2,6 @@
 
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 9
 
-![Animacja](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/animacja.gif)
 
 ---
 
