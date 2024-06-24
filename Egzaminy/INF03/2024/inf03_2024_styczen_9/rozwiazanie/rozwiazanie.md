@@ -28,6 +28,21 @@
 
 ## Kod na Stronę Internetową
 
+
+<CodeGroup>
+  <CodeGroupItem title="kwerendy.txt">
+
+```sql
+kw1: SELECT id, nazwa, wystepowanie FROM Ryby WHERE styl_zycia = 1;
+kw2: SELECT Ryby_id, wymiar_ochronny FROM Okres_ochronny WHERE wymiar_ochronny < 30;
+kw3: SELECT nazwa, akwen, wojewodztwo FROM Ryby INNER JOIN Lowisko ON Ryby.id = Lowisko.Ryby_id WHERE rodzaj = 3;
+kw4: ALTER TABLE Ryby ADD dobowy_limit TINYINT UNSIGNED;
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+
 <CodeGroup>
     <CodeGroupItem title="index.html">
       
@@ -81,8 +96,8 @@
 - W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
 - Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
-    </CodeGroupItem>
-    <CodeGroupItem title="kontakt.html">
+</CodeGroupItem>
+<CodeGroupItem title="kontakt.html">
       
 ### Kontakt.html
 
