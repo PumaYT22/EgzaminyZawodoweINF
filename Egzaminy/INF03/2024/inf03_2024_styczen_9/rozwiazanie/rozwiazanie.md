@@ -20,9 +20,9 @@
 ## Wprowadzenie
 
 <blockquote class="introduction">
-  𝗖𝗲𝗹 𝘇𝗮𝗱𝗮𝗻𝗶𝗮: Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
+                <strong>𝗖𝗲𝗹 𝘇𝗮𝗱𝗮𝗻𝗶𝗮: Co trzeba było wykonać</strong>
+                Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
 </blockquote>
-
 
 ---
 
@@ -173,6 +173,12 @@
 - W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
 - Skrypt JavaScript `wyslijFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `paragraf`.
 
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą  
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+            </blockquote>
+
 ### Styl.css
 
 ```css
@@ -237,6 +243,11 @@ button:hover {
 - [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
 
 Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
 
