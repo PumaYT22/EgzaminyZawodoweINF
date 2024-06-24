@@ -26,146 +26,13 @@
 
 ---
 
-<CodeGroup>
-  <CodeGroupItem title="wedkuj.php">
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wędkowanie</title>
-    <link rel="stylesheet" href="styl_1.css">
-</head>
-<body>
-    <header> <!-- Blok banera -->
-        <h1>Portal dla wędkarzy</h1>
-    </header>
-    <main>  <!-- Kontener na bloki lewe i prawy-->
-        <section> <!-- Kontener na dwa bloki lewe -->
-            <div> <!-- Blok lewy 1. -->
-                <h3>Ryby zamieszkujące rzeki</h3>
-                <ol>
-                    <!-- <?php
-                        Miejsce na skrypt 1.
-                    ?> -->
-                </ol>
-            </div>
-            <div> <!-- Blok lewy 2. -->
-                <h3>Ryby drapieżne naszych wód</h3>
-                <table>
-                    <tr>
-                        <th>L.p.</th>
-                        <th>Gatunek</th>
-                        <th>Występowanie</th>
-                    </tr>
-                    <!-- <?php
-                        Miejsce na skrypt 2.
-                    ?> -->
-                </table>
-            </div>
-        </section>
-        <section> <!-- Blok prawy -->
-            <img src="ryba1.jpg" alt="Sum">
-            <a href="kwerendy.txt">Pobierz kwerendy</a>
-        </section>
-    </main>
-    <footer>
-        <p>Stronę wykonał: Wojciech Chrzan Worshox</p>
-    </footer>
-</body>
-</html>
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="styl_1.css">
-
-```css
-/* Formatowanie z egzaminu */
-
-* {
-    font-family: Helvetica;
-}
-
-header, footer {
-    background-color: #008387;
-    color: white;
-    padding: 5px;
-    font-size: 130%;
-    text-align: center;
-}
-
-section div {
-    background-color: #EFEFEF;
-    width: 55%;
-}
-
-section div:first-child {
-    height: 150px;
-}
-
-section div:last-child {
-    height: 300px;
-}
-
-section:last-child {
-    background-color: #4FB3BF;
-    width: 45%;
-    height: 450px;
-    text-align: center;
-}
-
-img {
-    box-shadow: 10px 10px 7px DimGray;
-    margin: 20px;
-}
-
-table, th, td {
-    border: 1px solid #4FB3BF;
-    border-collapse: collapse;
-}
-
-table {
-    margin: auto;
-    width: 80%;
-}
-
-th, td {
-    padding: 4px;
-}
-
-tr:hover {
-    background-color: #4FB3BF;
-}
-
-/* Dodatkowe formatowanie do poprawnego układu bloków */
-
-main {
-    display: flex;
-}
-
-section:first-child {
-    width: 55%;
-}
-
-section div {
-    width: 100%;
-}
-
-h3 {
-    margin-block: 0;
-}
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
 ## Kod na Stronę Internetową
 
+<CodeGroup>
+  <CodeGroupItem title="index.html">
+      
 ### Index.html
-
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -213,6 +80,9 @@ h3 {
 - W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
 - Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
+  </CodeGroupItem>
+  <CodeGroupItem title="kontakt.html">
+      
 ### Kontakt.html
 
 ```html
@@ -314,6 +184,8 @@ h3 {
                 Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą  
                  <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
             </blockquote>
+  </CodeGroupItem>
+  <CodeGroupItem title="styl.css">
 
 ### Styl.css
 
@@ -367,6 +239,11 @@ button:hover {
 - Arkusz stylów CSS definiuje wygląd strony.
 - Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
 - Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+  </CodeGroupItem>
+</CodeGroup>
+
+
 
 ---
 
