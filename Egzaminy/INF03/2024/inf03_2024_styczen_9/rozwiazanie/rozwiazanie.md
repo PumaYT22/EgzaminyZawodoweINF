@@ -17,7 +17,7 @@
 
 ---
 
-## Wprowadzenie
+## Wprowadzenie!
 
 <blockquote class="introduction">
                 <strong>Cel arkuszu: Co trzeba było wykonać</strong>
