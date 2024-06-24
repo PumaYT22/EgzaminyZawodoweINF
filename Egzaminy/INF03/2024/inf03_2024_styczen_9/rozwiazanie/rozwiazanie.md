@@ -256,6 +256,11 @@ button:hover {
 </CodeGroup>
 
 
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
 
 ---
 
@@ -263,7 +268,7 @@ button:hover {
 
 🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
 
-### Przydatne zasoby:
+#### Przydatne zasoby:
 - [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
