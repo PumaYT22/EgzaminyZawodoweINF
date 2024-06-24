@@ -27,6 +27,11 @@
 
 ## Kod na Stronę Internetową
 
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
 <CodeGroup>
     <CodeGroupItem title="index.html">
       
