@@ -1,9 +1,27 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 9
+# Rozwiązanie arkusza INF 03 styczeń 2024 - 9 🚀
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html, css, js.
+W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym HTML, CSS, JS.
 
+![Animacja](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/animacja.gif)
 
-![<img width="20px" src="windows_console.png" />](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/animacja.gif)
+---
+
+## Spis Treści
+
+1. [Wprowadzenie](#wprowadzenie)
+2. [Kod na Stronę Internetową](#kod-na-stronę-internetową)
+    - [Index.html](#indexhtml)
+    - [Kontakt.html](#kontakthtml)
+    - [Styl.css](#stylcss)
+3. [Podsumowanie](#podsumowanie)
+
+---
+
+## Wprowadzenie
+
+> **Cel zadania**: Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
+
+---
 
 ## Kod na Stronę Internetową
 
@@ -196,3 +214,18 @@ button:hover{
     color:#80DEEA;
 }
 ```
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*
+
