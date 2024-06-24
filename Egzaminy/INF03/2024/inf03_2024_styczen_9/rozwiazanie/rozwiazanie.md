@@ -20,7 +20,7 @@
 ## Wprowadzenie
 
 <blockquote class="introduction">
-                <strong>𝗖𝗲𝗹 𝘇𝗮𝗱𝗮𝗻𝗶𝗮: Co trzeba było wykonać</strong>
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
                 Wykonanie grafiki i animacji oraz stworzenie strony internetowej z użyciem HTML, CSS i JavaScript.
 </blockquote>
 
