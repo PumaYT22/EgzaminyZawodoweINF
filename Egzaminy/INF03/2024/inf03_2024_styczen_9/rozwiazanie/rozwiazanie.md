@@ -26,6 +26,115 @@
 
 ---
 
+<CodeGroup>
+  <CodeGroupItem title="index.html">
+
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="icon" href="favicon.png">
+    <title>Komputery</title>
+</head>
+<body>
+    <div id="container">
+        <div id="baner">
+            <img src="animacja.gif" alt="Pogotowie komputerowe">
+        </div>
+        <div id="menu">
+            <a href="index.html">Strona Główna</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+        <div id="glowny1">
+            <h3>Kim Jesteśmy?</h3>
+            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
+        </div>
+        <div id="glowny2">
+            <h3>Co robimy?</h3>
+            <ul>
+                <li>naprawa komputerów</li>
+                <li>odzyskiwanie danych</li>
+                <li>wirusy</li>
+                <li>konfiguracja LAN</li>
+            </ul>
+        </div>
+        <div id="glowny3">
+            <h3>Jaki jest nasz znak?</h3>
+            <img src="favicon.png" alt="Doświadczenie i niezawodność">
+        </div>
+        <div id="stopka">
+            Autor: <em>NaukaOdZera</em>
+        </div>
+    </div>
+</body>
+</html>
+```
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
+
+  </CodeGroupItem>
+
+    <CodeGroupItem title="styl.css">
+
+```css
+body {
+    background-color: #E0F7FA;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#container {
+    width: 95%;
+    margin: auto;
+}
+#baner {
+    background-color: #00838F;
+    height: 200px;
+}
+#menu {
+    background-color: #006064;
+    padding: 15px;
+}
+#menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+}
+#glowny1, #glowny2, #glowny3 {
+    float: left;
+    height: 350px;
+    width: 33%;
+}
+#stopka {
+    clear: both;
+    background-color: #006064;
+    color: white;
+    text-align: right;
+    padding: 10px;
+}
+ul {
+    text-align: left;
+}
+button {
+    background-color: #00838F;
+    color: white;
+}
+button:hover {
+    color: #80DEEA;
+}
+```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+
+  </CodeGroupItem>
+</CodeGroup>
+
 ## Kod na Stronę Internetową
 
 ### Index.html
