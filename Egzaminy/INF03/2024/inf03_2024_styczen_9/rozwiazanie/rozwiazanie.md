@@ -30,7 +30,7 @@
 
 ### Index.html
 
-```html{27-43}
+```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
