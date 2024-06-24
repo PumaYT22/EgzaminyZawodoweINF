@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/EgzaminyZawodoweINF/static/css/main.fc51a05b.css",
-    "main.js": "/EgzaminyZawodoweINF/static/js/main.1cfc8d81.js",
+    "main.css": "/EgzaminyZawodoweINF/static/css/main.1897d2c7.css",
+    "main.js": "/EgzaminyZawodoweINF/static/js/main.595d47f9.js",
     "static/js/453.5b6c109b.chunk.js": "/EgzaminyZawodoweINF/static/js/453.5b6c109b.chunk.js",
     "static/media/egz1.jpg": "/EgzaminyZawodoweINF/static/media/egz1.9ba0183330fc2d77497a.jpg",
     "static/media/egz2.jpg": "/EgzaminyZawodoweINF/static/media/egz2.cbc94405d8ec34608d22.jpg",
@@ -13,12 +13,12 @@
     "static/media/php.svg": "/EgzaminyZawodoweINF/static/media/php.099cd051f27e93830fcdb7b1ac05bc40.svg",
     "static/media/js.svg": "/EgzaminyZawodoweINF/static/media/js.fef7215d0d3e578f01ad70419d4c4308.svg",
     "index.html": "/EgzaminyZawodoweINF/index.html",
-    "main.fc51a05b.css.map": "/EgzaminyZawodoweINF/static/css/main.fc51a05b.css.map",
-    "main.1cfc8d81.js.map": "/EgzaminyZawodoweINF/static/js/main.1cfc8d81.js.map",
+    "main.1897d2c7.css.map": "/EgzaminyZawodoweINF/static/css/main.1897d2c7.css.map",
+    "main.595d47f9.js.map": "/EgzaminyZawodoweINF/static/js/main.595d47f9.js.map",
     "453.5b6c109b.chunk.js.map": "/EgzaminyZawodoweINF/static/js/453.5b6c109b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc51a05b.css",
-    "static/js/main.1cfc8d81.js"
+    "static/css/main.1897d2c7.css",
+    "static/js/main.595d47f9.js"
   ]
 }
