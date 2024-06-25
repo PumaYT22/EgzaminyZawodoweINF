@@ -48,7 +48,7 @@ KWERENDA 4:
 DROP TABLE uzytkownik;
 ```
 
-</CodeGroupItem>
+    </CodeGroupItem>
 <CodeGroup>
 
 ---
