@@ -32,7 +32,22 @@
     Aby połączyć dwie tabele w SQL, możesz użyć INNER JOIN, który zwróci tylko te wiersze, które mają dopasowania w obu tabelach. Dodatkowo, używając klauzuli ORDER BY, możesz sortować wyniki w porządku rosnącym (ASC) lub malejącym (DESC).
 </blockquote>
 
+<CodeGroup>
+    <CodeGroupItem title="kwerendy.txt">
 
+```sql
+KWERENDA 1:
+SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis ASC;
+KWERENDA 2:
+SELECT cel, dataWyjazdu FROM wycieczki WHERE dostepna=0;
+KWERENDA 3:
+SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis FROM wycieczki JOIN zdjecia ON wycieczki.zdjecia_id=zdjecia.id WHERE cena > 1300; 
+KWERENDA 4:
+DROP TABLE uzytkownik;
+
+```
+</CodeGroupItem>
+<CodeGroup>
 
 ---
 
