@@ -47,8 +47,7 @@ SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis FROM wycieczki JOIN zdjecia
 KWERENDA 4:
 DROP TABLE uzytkownik;
 ```
-
-    </CodeGroupItem>
+</CodeGroupItem>
 <CodeGroup>
 
 ---
