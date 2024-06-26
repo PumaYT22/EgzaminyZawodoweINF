@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
+    <script>
+        function obliczPuszki() {
+            // Pobierz wartość z pola edycyjnego
+            var powierzchnia = parseFloat(document.getElementById('powierzchnia').value);
+
+            // Oblicz minimalną liczbę puszek
+            var iloscPuszek = Math.ceil(powierzchnia / 4); // 1 litr farby na 4m^2
+
+            // Wyświetl wynik
+            var wynik = document.getElementById('wynik');
+            wynik.textContent = "Liczba potrzebnych puszek: " + iloscPuszek;
+        }
+    </script>
+</head>
+<body>
+    <!-- Baner -->
+    <section class="banner">
+        <h1>Malowanie pokoi i biur</h1>
+    </section>
+
+    <!-- Bloki główne -->
+    <section class="main">
+        <!-- Blok lewy -->
+        <aside class="left">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </aside>
+
+        <!-- Blok środkowy -->
+        <div class="middle">
+            <!-- Zawartość podstrony cena.html -->
+            <h2>Zapotrzebowanie na farbę</h2>
+            <p>Powierzchnia malowania (m<sup>2</sup>): 
+                <input type="number" id="powierzchnia" step="any"> m<sup>2</sup>
+                <button onclick="obliczPuszki()">Policz</button>
+            </p>
+            
+            <p id="wynik"></p>
+        </div>
+
+        <!-- Blok prawy -->
+        <aside class="right">
+            <img src="obraz.png" alt="Próbki farb">
+        </aside>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: NaukaOdZera</p>
+    </footer>
+</body>
+</html>

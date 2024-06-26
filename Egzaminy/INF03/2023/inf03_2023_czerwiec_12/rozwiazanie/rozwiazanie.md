@@ -1,271 +1,152 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 1
+# Rozwiązanie arkusza INF 03 czerwiec 2023 - 12
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę (przeskalować) oraz stronę internetową z wskazanym html,css,php.
 
 ### Kod na Stronę Internetową
 
-#### index.html
+#### index.php
 
-```html
+```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
+    <title>Hurtownia szkolna</title>
     <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
+    <header>
+        <h1>Hurtownia z najlepszymi cenami</h1>
+    </header>
+    <section id="left">
+        <h2>Nasze ceny</h2>
+        <table>
+            <?php
+            $conn = new mysqli('localhost', 'root', '', 'sklep');
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "SELECT nazwa, cena FROM towary LIMIT 4";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr><td>{$row['nazwa']}</td><td>{$row['cena']}</td></tr>";
+                }
+            }
+            $conn->close();
+            ?>
+        </table>
+    </section>
+    <section id="center">
+        <h2>Koszt zakupów</h2>
+        <form action="index.php" method="POST">
+            <label for="item">wybierz artykuł:</label>
+            <select name="item" id="item">
+                <option value="Zeszyt 60 kartek">Zeszyt 60 kartek</option>
+                <option value="Zeszyt 32 kartki">Zeszyt 32 kartki</option>
+                <option value="Cyrkiel">Cyrkiel</option>
+                <option value="Linijka 30 cm">Linijka 30 cm</option>
+            </select><br>
+            <label for="quantity">liczba sztuk:</label>
+            <input type="number" name="quantity" id="quantity"><br>
+            <button type="submit">OBLICZ</button>
+        </form>
+        <?php
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Przechwytywanie i sprawdzenie danych z formularza
+                $item = $_POST['item'] ?? '';
+                $quantity = $_POST['quantity'] ?? '';
+
+                // Sprawdzenie czy dane są poprawne
+                if (!empty($item) && is_numeric($quantity) && $quantity > 0) {
+                    // Połączenie z bazą danych
+                    $conn = new mysqli('localhost', 'root', '', 'sklep');
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    // Przygotowanie zapytania SQL i jego wykonanie
+                    $sql = "SELECT cena FROM towary WHERE nazwa = '$item'";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $price = $row['cena'];
+                        $total = $price * $quantity;
+                        echo "<p>wartość zakupów: $total</p>";
+                    } else {
+                        echo "<p>Nie znaleziono produktu o nazwie: $item</p>";
+                    }
+
+                    // Zamknięcie połączenia z bazą danych
+                    $conn->close();
+                } else {
+                    echo "<p>Błąd: proszę podać poprawne dane.</p>";
+                }
+            }
+        ?>
+    </section>
+    <section id="right">
+        <h2>Kontakt</h2>
+        <img src="zakupy.png" alt="hurtownia">
+        <p><a href="mailto:hurt@poczta2.pl">e-mail: hurt@poczta2.pl</a></p>
+    </section>
+    <footer>
+        <h4>Witrynę wykonał: NaukaOdZera</h4>
+    </footer>
 </body>
 </html>
-
 ```
 
-#### uslugi.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Oferta</h2>
-            <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
-            </ol>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### kontakt.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <hr>
-            <p id="komunikat"></p>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
-
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
-
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
-        }
-    }
-
-    </script>
-</body>
-</html>
-
-```
 #### styl.css
 
 ```css
-/* Styl CSS */
-body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+    font-family: Georgia;
+    text-align: center;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+header, footer {
+    background-color: #4BA3C7;
+    color: white;
+    height: 80px;
+    font-size: 120%;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    color: Navy;
-    margin: 50px;
+#left, #right {
+    background-color: #EFEFEF;
     height: 400px;
+    width: 25%;
+    float: left;
 }
 
-footer {
-    text-align: right;
-    background-color: LightBlue;
-    padding: 10px;
+footer{
+    clear: both;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+#center {
+    background-color: #90CAF9;
+    height: 400px;
+    width: 50%;
+    float: left;
 }
 
-button:hover {
-    opacity: 0.8;
+table {
+    margin-left: 10px;
+    width: 90%;
+    border: 1px solid #90CAF9;
 }
 
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 10px;
+td {
     padding: 5px;
+    border: 1px solid #90CAF9;
 }
 
-nav.menu a:hover {
-    border: 1px solid Navy;
+tr:hover {
+    color: #90CAF9;
 }
 
+input[type=number] {
+    margin: 15px 0;
+}
 ```

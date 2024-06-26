@@ -1,12 +1,3 @@
-# Rozwiązanie arkusza INF 03 czerwiec 2023 - 3
-
-W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css.
-
-### Kod na Stronę Internetową
-
-#### index.php
-
-```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -91,57 +82,3 @@ W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css.
     </div>
 </body>
 </html>
-
-```
-
-#### styl.css
-
-```css
-*{
-    font-family: Garamond;
-    text-align: center;
-}
-header, footer{
-    background-color: #8C7B75;
-    color: white;
-    height: 70px;
-    font-size: 150%;
-}
-#lewy{
-    float: left;
-}
-#srodek{
-    float: left;
-}
-#prawy{
-    float: left;
-}
-footer{
-    clear: both;
-}
-aside{
-    background-color: #BCAAA4;
-    height: 400px;
-    width: 35%;
-}
-#srodek{
-    background-color: #EFDCD5;
-    height: 400px;
-    width: 30%;
-}
-ol{
-    list-style-type: lower-alpha;
-}
-li{
-    text-align: left;
-}
-img{
-    border: 1px dashed #8C7B75;
-    padding: 5px;
-    border-radius: 10%;
-}
-#blok{
-    margin-top: 100px;
-    border: 1px solid #8C7B75;
-}
-```
