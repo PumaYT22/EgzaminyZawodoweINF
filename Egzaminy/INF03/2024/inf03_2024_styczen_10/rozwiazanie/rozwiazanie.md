@@ -43,7 +43,6 @@ KWERENDA 3:
 SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis FROM wycieczki JOIN zdjecia ON wycieczki.zdjecia_id=zdjecia.id WHERE cena > 1300; 
 KWERENDA 4:
 DROP TABLE uzytkownik;
-
 ```
 
 ---
