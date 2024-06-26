@@ -1,12 +1,3 @@
-# Rozwiązanie arkusza INF 03 czerwiec 2023 - 5
-
-W tym arkuszu trzeba było wykonać grafikę (przeskalować) oraz stronę internetową z wskazanym html,css,php.
-
-### Kod na Stronę Internetową
-
-#### index.php
-
-```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -96,57 +87,3 @@ W tym arkuszu trzeba było wykonać grafikę (przeskalować) oraz stronę intern
     </footer>
 </body>
 </html>
-```
-
-#### styl.css
-
-```css
-* {
-    font-family: Georgia;
-    text-align: center;
-}
-
-header, footer {
-    background-color: #4BA3C7;
-    color: white;
-    height: 80px;
-    font-size: 120%;
-}
-
-#left, #right {
-    background-color: #EFEFEF;
-    height: 400px;
-    width: 25%;
-    float: left;
-}
-
-footer{
-    clear: both;
-}
-
-#center {
-    background-color: #90CAF9;
-    height: 400px;
-    width: 50%;
-    float: left;
-}
-
-table {
-    margin-left: 10px;
-    width: 90%;
-    border: 1px solid #90CAF9;
-}
-
-td {
-    padding: 5px;
-    border: 1px solid #90CAF9;
-}
-
-tr:hover {
-    color: #90CAF9;
-}
-
-input[type=number] {
-    margin: 15px 0;
-}
-```

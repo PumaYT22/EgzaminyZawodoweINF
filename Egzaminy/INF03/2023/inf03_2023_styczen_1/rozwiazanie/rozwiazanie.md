@@ -1,271 +1,213 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 1
+# Rozwiązanie arkusza INF 03 styczeń 2023 - 1
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę  oraz stronę internetową z wskazanym html,css,js.
 
 ### Kod na Stronę Internetową
 
-#### index.html
+#### mieszamy.html
 
 ```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
+    <!-- Baner -->
+    <section class="banner">
+        <h1>Malowanie pokoi i biur</h1>
+    </section>
+
+    <!-- Bloki główne -->
+    <section class="main">
+        <!-- Blok lewy -->
+        <aside class="left">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </aside>
+
+        <!-- Blok środkowy -->
+        <div class="middle">
+            <!-- Zawartość podstrony mieszamy.html -->
+            <h2>Barwy i ich pochodne</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Kolory farb</th>
+                        <th>Pojemność</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Żółty</td>
+                        <td>Blady</td>
+                        <td>5l</td>
+                    </tr>
+                    <tr>
+                        <td>Czerwony</td>
+                        <td>Sangria</td>
+                        <td>4l</td>
+                    </tr>
+                    <tr>
+                        <td>Niebieski</td>
+                        <td>Jasny</td>
+                        <td>3l</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Blok prawy -->
+        <aside class="right">
+            <img src="obraz.png" alt="Próbki farb">
+        </aside>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: NaukaOdZera</p>
+    </footer>
 </body>
 </html>
-
 ```
 
-#### uslugi.html
+#### cena.html
 
 ```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Oferta</h2>
-            <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
-            </ol>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### kontakt.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <hr>
-            <p id="komunikat"></p>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
+        function obliczPuszki() {
+            // Pobierz wartość z pola edycyjnego
+            var powierzchnia = parseFloat(document.getElementById('powierzchnia').value);
 
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
+            // Oblicz minimalną liczbę puszek
+            var iloscPuszek = Math.ceil(powierzchnia / 4); // 1 litr farby na 4m^2
 
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
+            // Wyświetl wynik
+            var wynik = document.getElementById('wynik');
+            wynik.textContent = "Liczba potrzebnych puszek: " + iloscPuszek;
         }
-    }
-
     </script>
+</head>
+<body>
+    <!-- Baner -->
+    <section class="banner">
+        <h1>Malowanie pokoi i biur</h1>
+    </section>
+
+    <!-- Bloki główne -->
+    <section class="main">
+        <!-- Blok lewy -->
+        <aside class="left">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </aside>
+
+        <!-- Blok środkowy -->
+        <div class="middle">
+            <!-- Zawartość podstrony cena.html -->
+            <h2>Zapotrzebowanie na farbę</h2>
+            <p>Powierzchnia malowania (m<sup>2</sup>): 
+                <input type="number" id="powierzchnia" step="any"> m<sup>2</sup>
+                <button onclick="obliczPuszki()">Policz</button>
+            </p>
+            
+            <p id="wynik"></p>
+        </div>
+
+        <!-- Blok prawy -->
+        <aside class="right">
+            <img src="obraz.png" alt="Próbki farb">
+        </aside>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: NaukaOdZera</p>
+    </footer>
 </body>
 </html>
-
 ```
-#### styl.css
+
+#### styl_1.css
 
 ```css
-/* Styl CSS */
-body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+    font-family: Cambria, sans-serif;
+
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    color: Navy;
-    margin: 50px;
-    height: 400px;
-}
-
-footer {
-    text-align: right;
-    background-color: LightBlue;
+/* Baner i stopka */
+.banner, footer {
+    background-color: #829EB9;
+    color: white;
+    text-align: center;
     padding: 10px;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+/* Bloki lewy i prawy */
+.left, .right {
+    background-color: #B3C6D9;
+    height: 400px;
+    width: 25%;
+    padding-top: 100px; /* margines wewnętrzny górny */
+    float: left;
 }
 
-button:hover {
-    opacity: 0.8;
+
+/* Blok środkowy */
+.middle {
+    background-color: #E0E9F1;
+    height: 400px;
+    width: 50%;
+    text-align: center;
+    padding-top: 100px; /* margines wewnętrzny górny */
+    float: left;
 }
 
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 10px;
-    padding: 5px;
+/* Tabela */
+table {
+    border: 1px solid DimGray;
+    width: 80%;
+    margin: auto; /* automatyczne marginesy zewnętrzne */
+    border-collapse: collapse;
 }
 
-nav.menu a:hover {
-    border: 1px solid Navy;
+table, th, td {
+    border: 1px solid DimGray;
+}
+
+th, td {
+    padding: 10px;
+}
+
+/* Interakcje z tabelą */
+td:hover {
+    background-color: SteelBlue;
+    color: white;
+}
+
+/* Obraz */
+img {
+    width: 100%;
+    border-radius: 20px;
 }
 
 ```

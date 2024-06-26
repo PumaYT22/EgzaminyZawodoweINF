@@ -1,0 +1,10 @@
+KWERENDA 1:
+SELECT nazwa FROM towary WHERE promocja=1;
+KWERENDA 2:
+SELECT cena FROM towary where nazwa='Markery 4 szt.';
+KWERENDA 3:
+SELECT id, nazwa, COUNT(id) AS
+liczba_towarow FROM dostawcy JOIN towary ON idDostawcy =
+dostawcy.id GROUP BY dostawcy.nazwa;
+KWERENDA 4:
+ALTER TABLE dostawcy ADD informacje TEXT;

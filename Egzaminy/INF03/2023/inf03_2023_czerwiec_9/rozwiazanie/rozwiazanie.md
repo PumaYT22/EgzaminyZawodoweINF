@@ -1,6 +1,6 @@
 # Rozwiązanie arkusza INF 03 czerwiec 2023 - 9
 
-W tym arkuszu trzeba było wykonać grafikę (przeskalowanie),sql oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę (przeskalowanie,zapis w szarości),sql oraz stronę internetową z wskazanym html,css,php.
 
 ### Zapytania sql
 
