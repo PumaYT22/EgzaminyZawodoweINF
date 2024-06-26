@@ -1,11 +1,43 @@
+---
+
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 3
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
 
-### Kod na Stronę Internetową
+---
 
-#### index.html
+## Spis Treści
 
+1. Wprowadzenie
+2. Kod na Stronę Internetową
+    - Index.html
+    - Uslugi.html
+    - Kontakt.html
+    - Styl.css
+3. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
+                W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+</blockquote>
+
+---
+
+## Kod na Stronę Internetową
+
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
+<CodeGroup>
+    <CodeGroupItem title="index.html">
+      
+### Index.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -44,7 +76,15 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 ```
 
-#### uslugi.html
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera sekcję nagłówkową z logiem i menu, sekcje banner z animacją i sekcję main o czym jest firma oraz stopkę.
+
+</CodeGroupItem>
+<CodeGroupItem title="uslugi.html">
+      
+### Uslugi.html
 
 ```html
 <!DOCTYPE html>
@@ -86,10 +126,17 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
     </div>
 </body>
 </html>
-
 ```
 
-#### kontakt.html
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony usługi.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera sekcję nagłówkową z logiem i menu, sekcje banner z animacją i sekcję main z oferatmi oraz stopkę.
+    
+</CodeGroupItem>   
+<CodeGroupItem title="kontakt.html">
+      
+### Kontakt.html
 
 ```html
 <!DOCTYPE html>
@@ -158,13 +205,11 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 
 
     <script>
-        //Dodanie nasłuchiwania przycisku o id "prześlij" , po załadowaniu strony
         document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
     });
 
     function przetworzFormularz() {
-        //Pobieranie wartości pól
         const imie = document.getElementById('imie').value.trim().toUpperCase();
         const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
         const zgloszenie = document.getElementById('zgloszenie').value.trim();
@@ -183,9 +228,17 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
     </script>
 </body>
 </html>
-
 ```
-#### styl.css
+
+**Wyjaśnienie:**
+- Plik HTML dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
+- W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
+- Skrypt JavaScript `przetworzFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `komunikat`.
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl.css">
+
+### Styl.css
 
 ```css
 /* Styl CSS */
@@ -271,3 +324,38 @@ nav.menu a:hover {
 }
 
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*

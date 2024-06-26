@@ -1,11 +1,92 @@
-# Rozwiązanie arkusza INF 03 czerwiec 2024 - 3
+---
 
-W tym arkuszu trzeba było wykonać grafikę,sql oraz stronę internetową z wskazanym html,css,php.
+# Rozwiązanie arkusza INF 03 czerwiec 2022 - 3
 
-### Kod na Stronę Internetową
 
-#### zawody.html
+---
 
+## Spis Treści
+
+1. Wprowadzenie
+2. Operacje na Bazie Danych
+3. Kod na Stronę Internetową
+    - zawody.html
+    - zgloszenie.php
+    - styl3.css
+4. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
+               W tym arkuszu trzeba było wykonać grafikę,sql oraz stronę internetową z wskazanym html,css,php.
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+    <strong>Wskazówka: Praca z kwerendami SQL</strong>
+    Poniżej znajdują się kwerendy SQL oraz krótkie wyjaśnienie kluczowych komend:
+    <ul>
+        <li>
+            <strong>Kwerenda 1:</strong>
+            <pre><code>INSERT INTO zawody_wedkarskie VALUES (NULL, '2', '4', '2021-09-28', 'Andrzej Nowak');</code></pre>
+            Ta kwerenda wstawia nowy rekord do tabeli <code>zawody_wedkarskie</code>. Wartość <code>NULL</code> oznacza, że kolumna <code>id</code> (jeśli jest autoinkrementowana) zostanie automatycznie wypełniona. Pozostałe wartości odpowiadają odpowiednio kolumnom.
+        </li>
+        <li>
+            <strong>Kwerenda 2:</strong>
+            <pre><code>SELECT id, data_zawodow FROM zawody_wedkarskie WHERE sedzia = 'Krzysztof Dobrowolski';</code></pre>
+            Ta kwerenda wybiera kolumny <code>id</code> i <code>data_zawodow</code> z tabeli <code>zawody_wedkarskie</code> dla rekordów, gdzie kolumna <code>sedzia</code> jest równa 'Krzysztof Dobrowolski'.
+        </li>
+        <li>
+            <strong>Kwerenda 3:</strong>
+            <pre><code>SELECT imie, nazwisko, punkty FROM karty_wedkarskie JOIN zawody_wedkarskie ON karty_wedkarskie.id = zawody_wedkarskie.Karty_wedkarskie_id WHERE zawody_wedkarskie.id = 4;</code></pre>
+            Ta kwerenda demonstruje jak łączyć tabele:
+            <ul>
+                <li>
+                    <code>JOIN</code> łączy tabelę <code>karty_wedkarskie</code> z tabelą <code>zawody_wedkarskie</code> na podstawie kolumny <code>id</code> w tabeli <code>karty_wedkarskie</code> oraz kolumny <code>Karty_wedkarskie_id</code> w tabeli <code>zawody_wedkarskie</code>.
+                </li>
+                <li>
+                    Wynik zawiera kolumny <code>imie</code>, <code>nazwisko</code> i <code>punkty</code> dla rekordów, gdzie <code>zawody_wedkarskie.id</code> jest równy 4.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Kwerenda 4:</strong>
+            <pre><code>UPDATE karty_wedkarskie SET punkty = punkty + 2 WHERE karty_wedkarskie.id = 1;</code></pre>
+            Ta kwerenda aktualizuje kolumnę <code>punkty</code> w tabeli <code>karty_wedkarskie</code>, zwiększając wartość o 2 dla rekordu, gdzie <code>id</code> jest równe 1.
+        </li>
+    </ul>
+</blockquote>
+
+### kwerendy.txt
+
+```sql
+1. INSERT INTO zawody_wedkarskie VALUES (NULL, '2', '4', '2021-09-28', 'Andrzej Nowak');
+2. SELECT id, data_zawodow FROM zawody_wedkarskie WHERE sedzia = 'Krzysztof Dobrowolski'; 
+3. SELECT imie, nazwisko, punkty FROM karty_wedkarskie JOIN zawody_wedkarskie ON karty_wedkarskie.id = zawody_wedkarskie.Karty_wedkarskie_id WHERE zawody_wedkarskie.id = 4;
+4. UPDATE karty_wedkarskie SET punkty = punkty + 2 WHERE karty_wedkarskie.id = 1;
+```
+
+---
+
+
+## Kod na Stronę Internetową
+
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
+<CodeGroup>
+    <CodeGroupItem title="zawody.html">
+      
+### zawody.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -61,8 +142,15 @@ W tym arkuszu trzeba było wykonać grafikę,sql oraz stronę internetową z wsk
 </html>
 ```
 
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów.
+- Struktura strony zawiera baner , menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
-#### zgloszenie.php
+</CodeGroupItem>
+<CodeGroupItem title="zgloszenie.php">
+      
+### Zgloszenie.php
 
 ```php
 <?php
@@ -89,7 +177,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 ```
-#### styl3.css
+
+**Wyjaśnienie:**
+- Plik PHP zawiera sprawdzanie czy formualrz jest wysłany metodą POST.
+- Plik PHP pobiera dane z formularza i łączy się z bazą danych oraz wysyła do niej zapytanie INSERT.
+- Po wysłaniu zapytania wyświetla komunikat czy dodano czy są błędy.
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl3.css">
+
+### Styl3.css
 
 ```css
 * {
@@ -152,3 +249,38 @@ a {
 }
 
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*

@@ -2,7 +2,6 @@
 
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 9
 
-![Animacja](https://raw.githubusercontent.com/PumaYT22/EgzaminyZawodoweINF/main/Egzaminy/INF03/2024/inf03_2024_styczen_9/rozwiazanie/plikizrozwiazaniem/animacja.gif)
 
 ---
 
@@ -17,7 +16,7 @@
 
 ---
 
-## Wprowadzenie
+## Wprowadzenie!
 
 <blockquote class="introduction">
                 <strong>Cel arkuszu: Co trzeba było wykonać</strong>
@@ -28,8 +27,16 @@
 
 ## Kod na Stronę Internetową
 
-### Index.html
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
 
+<CodeGroup>
+    <CodeGroupItem title="index.html">
+      
+### Index.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -72,11 +79,15 @@
 </body>
 </html>
 ```
+
 **Wyjaśnienie:**
 - Ten plik HTML definiuje strukturę strony głównej.
 - W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
 - Struktura strony zawiera baner z animacją, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
 
+</CodeGroupItem>
+<CodeGroupItem title="kontakt.html">
+      
 ### Kontakt.html
 
 ```html
@@ -168,16 +179,14 @@
 </body>
 </html>
 ```
+
 **Wyjaśnienie:**
 - Plik HTML dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
 - W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
 - Skrypt JavaScript `wyslijFormularz` jest używany do wyświetlania wypełnionych danych w elemencie `<p>` o id `paragraf`.
-
-<blockquote className="warning">
-                <strong>UWAGA: Załączanie skryptu</strong>
-                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą  
-                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
-            </blockquote>
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl.css">
 
 ### Styl.css
 
@@ -232,13 +241,23 @@ button:hover {
 - Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
 - Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
 
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
+
 ---
 
 ## Podsumowanie
 
 🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
 
-### Przydatne zasoby:
+#### Przydatne zasoby:
 - [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)

@@ -1,11 +1,84 @@
+---
+
 # Rozwiązanie arkusza INF 03 styczen 2022 - 1
 
-W tym arkuszu trzeba było wykonać polecenia do bazy oraz stronę internetową z wskazanym html,css,php.
 
-### Kod na Stronę Internetową
+---
 
-#### restauracja.html
+## Spis Treści
 
+1. Wprowadzenie
+2. Operacje na Bazie Danych
+3. Kod na Stronę Internetową
+    - restauracja.html
+    - restauracja.php
+    - Styl_1.css
+5. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
+                W tym arkuszu trzeba było wykonać polecenia do bazy oraz stronę internetową z wskazanym html,css,php.
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+     <strong>Wskazówka: Praca z kwerendami SQL</strong>
+    Poniżej znajdują się przykładowe kwerendy SQL oraz krótkie wyjaśnienie kluczowych komend:
+    <ul>
+        <li>
+            <strong>Kwerenda 1:</strong>
+            <pre><code>INSERT INTO rezerwacje (`nr_stolika`, `data_rez`, `liczba_osob`, `telefon`) VALUES (1, "2017-07-04", 4, "111222333");</code></pre>
+            Ta kwerenda wstawia nowy rekord do tabeli <code>rezerwacje</code> z wartościami dla kolumn <code>nr_stolika</code>, <code>data_rez</code>, <code>liczba_osob</code> i <code>telefon</code>.
+        </li>
+        <li>
+            <strong>Kwerenda 2:</strong>
+            <pre><code>SELECT nazwa, cena FROM dania WHERE typ = 2;</code></pre>
+            Ta kwerenda wybiera kolumny <code>nazwa</code> i <code>cena</code> z tabeli <code>dania</code> dla rekordów, gdzie <code>typ</code> jest równy 2.
+        </li>
+        <li>
+            <strong>Kwerenda 3:</strong>
+            <pre><code>SELECT nazwa FROM dania WHERE typ = 3 AND cena < 15;</code></pre>
+            Ta kwerenda wybiera kolumnę <code>nazwa</code> z tabeli <code>dania</code> dla rekordów, gdzie <code>typ</code> jest równy 3 i <code>cena</code> jest mniejsza niż 15.
+        </li>
+        <li>
+            <strong>Kwerenda 4:</strong>
+            <pre><code>UPDATE pracownicy SET stanowisko = 4 WHERE stanowisko = 3;</code></pre>
+            Ta kwerenda aktualizuje kolumnę <code>stanowisko</code> w tabeli <code>pracownicy</code>, zmieniając wartość z 3 na 4 dla wszystkich pasujących rekordów.
+        </li>
+    </ul>
+</blockquote>
+
+### kwerendy.txt
+
+```sql
+1. INSERT INTO rezerwacje (`nr_stolika`, `data_rez`, `liczba_osob`, `telefon`) VALUES (1, "2017-07-04", 4, "111222333");
+2. SELECT nazwa, cena FROM dania WHERE typ = 2; 
+3. SELECT nazwa FROM dania WHERE typ = 3 AND cena < 15
+4. UPDATE pracownicy SET stanowisko = 4 WHERE stanowisko = 3
+```
+
+---
+
+
+## Kod na Stronę Internetową
+
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
+<CodeGroup>
+    <CodeGroupItem title="restauracja.html">
+      
+### Restauracja.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -61,7 +134,15 @@ W tym arkuszu trzeba było wykonać polecenia do bazy oraz stronę internetową 
 </html>
 ```
 
-#### restauracja.php
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Na stronie znajduję się formularz z metodą post, który wysyła rządanie poprzez button submit z danymi do pliku restauracja.php
+
+</CodeGroupItem>
+<CodeGroupItem title="restauracja.php">
+      
+### restauracja.php
 
 ```php
 <?php
@@ -97,7 +178,15 @@ $conn->close();
 ?>
 ```
 
-#### styl_1.css
+**Wyjaśnienie:**
+- Plik PHP dla strony restauracja.html zawiera łączenie z bazą i wysyłanie do niej zapytania INSERT.
+- Jest to zmodyfikowane zapytanie pierwsze z kwerendy.txt.
+
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl_1.css">
+
+### Styl_1.css
 
 ```css
 body{
@@ -147,3 +236,38 @@ button {
     color: khaki;
 }
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*
