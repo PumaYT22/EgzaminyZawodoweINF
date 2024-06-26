@@ -1,11 +1,64 @@
+---
+
 # Rozwiązanie arkusza INF 03 styczeń 2024 - 6
 
-W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css oraz zapytania SQL.
+
+---
+
+## Spis Treści
+
+1. Wprowadzenie
+2. Operacje na Bazie Danych
+3. Kod na Stronę Internetową
+    - Biuro.php
+    - Styl9.css
+4. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
+                W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css oraz zapytania SQL.
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+    <strong>Wskazówka: Łączenie tabel i sortowanie wyników</strong>
+    Aby połączyć dwie tabele w SQL, możesz użyć INNER JOIN, który zwróci tylko te wiersze, które mają dopasowania w obu tabelach. Dodatkowo, używając klauzuli ORDER BY, możesz sortować wyniki w porządku rosnącym (ASC) lub malejącym (DESC).
+</blockquote>
+
+### kwerendy.txt
+
+```sql
+KWERENDA 1:
+SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis ASC;
+KWERENDA 2:
+SELECT cel, dataWyjazdu FROM wycieczki WHERE dostepna=0;
+KWERENDA 3:
+SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis FROM wycieczki JOIN zdjecia ON wycieczki.zdjecia_id=zdjecia.id WHERE cena > 1300; 
+KWERENDA 4:
+DROP TABLE uzytkownik;
+```
+
+---
 
 ## Kod na Stronę Internetową
 
-**biuro.php**
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
 
+<CodeGroup>
+    <CodeGroupItem title="biuro.php">
+      
+### Biuro.php
+      
 ```php
 <!DOCTYPE html>
 <html lang="pl">
@@ -94,7 +147,17 @@ W tym arkuszu trzeba było zrobić stronę internetową z wskazanym php, css ora
 </body>
 </html>
 ```
-**styl9.css**
+
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów.
+- Struktura strony zawiera sekcje nagłówek, main, dane oraz stopka.
+
+</CodeGroupItem>
+<CodeGroupItem title="styl9.css">
+
+### Styl9.css
+
 ```css
 *{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -150,3 +213,42 @@ img{
     box-shadow: 7px 7px 7px dimgray;
 }
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+    <strong>UWAGA: Załączanie skryptu PHP</strong>
+    Upewnij się, że poprawnie dołączasz skrypt PHP do swoich plików. Możesz to zrobić, używając funkcji <code>include</code> lub <code>require</code> lub wstawić skrypt php w danej sekcji na stronie. Na przykład:
+    <pre><code>&lt;?php include 'skrypt.php'; ?&gt;</code></pre>
+    lub
+    <pre><code>&lt;?php require 'skrypt.php'; ?&gt;</code></pre>
+    Pamiętaj, że <code>require</code> zatrzyma wykonywanie skryptu w przypadku błędu, podczas gdy <code>include</code> tylko wyświetli ostrzeżenie i pozwoli na kontynuację. Upewnij się, że ścieżka do pliku jest poprawna     i plik jest dostępny.
+    
+</blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*
