@@ -1,0 +1,51 @@
+/* Domyślne wartości dla wszystkich selektorów */
+body {
+    font-family: Georgia, serif;
+}
+
+/* Styl dla banera i stopki */
+header, footer {
+    background-color: #C75B39;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styl dla bloku lewego */
+aside {
+    background-color: #FF8A65;
+    width: 25%;
+    height: 500px;
+    padding-top: 50px;
+}
+
+/* Styl dla bloku prawego */
+main {
+    background-color: Snow;
+    width: 75%;
+    height: 500px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Styl dla obrazów */
+img {
+    width: 25%;
+    margin: 10px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+/* Styl dla elementów listy */
+li {
+    margin: 5px;
+}
+
+/* Styl dla znaków markerów w elementach listy */
+ol li::marker, ul li::marker {
+    color: Snow;
+}
+
+/* Styl dla nagłówka trzeciego stopnia */
+h3 {
+    margin: 50px 0;
+}

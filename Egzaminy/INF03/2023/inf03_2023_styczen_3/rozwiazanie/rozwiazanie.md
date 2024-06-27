@@ -1,6 +1,6 @@
-# Rozwiązanie arkusza INF 03 styczeń 2024 - 1
+# Rozwiązanie arkusza INF 03 styczeń 2023 - 3
 
-W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetową z wskazanym html,css,js.
+W tym arkuszu trzeba było wykonać grafikę (przekadrować i przeskalować) oraz stronę internetową z wskazanym html,css,php.
 
 ### Kod na Stronę Internetową
 
@@ -11,261 +11,163 @@ W tym arkuszu trzeba było wykonać grafikę i animację oraz stronę internetow
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <title>Kwiaty</title>
+    <link rel="stylesheet" href="styl3.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Firma IT</h2>
-            <p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-            <hr>
-        </main>
-        <footer>
-            <p>Autor strony: <strong>NaukaOdZera</strong></p>
-        </footer>
-    </div>
-</body>
-</html>
-
-```
-
-#### uslugi.html
-
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img class="obrazek" src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Oferta</h2>
+    <header>
+        <h1>Grupa Polskich Kwiaciarni</h1>
+    </header>
+    <section style="display: flex;">
+        <aside style="flex: 1;">
+            <h2>Menu</h2>
             <ol>
-                <li>Outsourcing IT</li>
-                <li>Konfiguracja komputerów</li>
-                <li>Sprzęt komputerowy</li>
-                <li>Strony internetowe</li>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="https://www.kwiaty.pl/" target="_blank">Rozpoznaj kwiaty</a></li>
+                <li><a href="znajdz.php">Znajdź kwiaciarnię</a>
+                    <ul>
+                        <li>w Warszawie</li>
+                        <li>w Malborku</li>
+                        <li>w Poznaniu</li>
+                    </ul>
+                </li>
             </ol>
-            <hr>
+        </aside>
+        <main style="flex: 3;">
+            <h2>Strona dla miłośników kwiatów</h2>
+            <img src="gerbera.jpg" alt="Gerbera">
+            <img src="gozdzik.jpg" alt="Goździk">
+            <img src="roza.jpg" alt="Róża">
         </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
+    </section>
+    <footer>
+        <p>Stronę opracował: <a href="https://github.com/PumaYT22/EgzaminyZawodoweINF/">NaukaOdZera</a></p>
+    </footer>
 </body>
 </html>
 
+
 ```
 
-#### kontakt.html
+#### znajdz.php
 
-```html
+```php
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Firma IT</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="icon" href="logo.png">
+    <title>Kwiaty</title>
+    <link rel="stylesheet" href="styl3.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section class="logo">
-                <img src="logo.png" alt="firma it">
-            </section>
-            <nav class="menu">
-                <a href="index.html">Strona Główna</a>
-                <a href="uslugi.html">Usługi</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </header>
-        <section class="banner">
-            <img src="animacja.gif" alt="Usługi informatyczne">
-        </section>
-        <main>
-            <h2>Kontakt</h2>
-            <form id="kontaktForm" action="#" method="post">
-                <table>
-                    <tr>
-                        <td>Imię: </td>
-                        <td><input type="text" id="imie" name="imie"></td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko: </td>
-                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
-                    </tr>
-                    <tr>
-                        <td>E-mail: </td>
-                        <td><input type="email" id="email" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Zgłoszenie </td>
-                        <td><textarea id="zgloszenie" name="zgloszenie" rows="10" cols="40"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="checkbox" id="regulamin" name="regulamin"> Zapoznałam/em się z regulaminem</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Resetuj</button>
-                            <button type="button" id="przeslij">Prześlij</button>
-                        </td>
-                    </tr>
-                </table>
+    <header>
+        <h1>Grupa Polskich Kwiaciarni</h1>
+    </header>
+    <section style="display: flex;">
+        <aside style="flex: 1;">
+            <h2>Menu</h2>
+            <ol>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="https://www.kwiaty.pl/" target="_blank">Rozpoznaj kwiaty</a></li>
+                <li><a href="znajdz.php">Znajdź kwiaciarnię</a>
+                    <ul>
+                        <li>w Warszawie</li>
+                        <li>w Malborku</li>
+                        <li>w Poznaniu</li>
+                    </ul>
+                </li>
+            </ol>
+        </aside>
+        <main style="flex: 3;">
+            <h2>Znajdź kwiaciarnię</h2>
+            <form method="POST" action="znajdz.php">
+                <label for="miasto">Podaj nazwę miasta:</label>
+                <input type="text" id="miasto" name="miasto">
+                <button type="submit">SPRAWDŹ</button>
             </form>
-            <hr>
-            <p id="komunikat"></p>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $miasto = htmlspecialchars($_POST['miasto']);
+                $conn = new mysqli("localhost", "root", "", "kwiaciarnia");
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                $sql = "SELECT nazwa, ulica FROM kwiaciarnie WHERE miasto='$miasto'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        echo "<h3>" . $row["nazwa"]. ", " . $row["ulica"]. "</h3>";
+                    }
+                } else {
+                    echo "<h3>Brak wyników</h3>";
+                }
+                $conn->close();
+            }
+            ?>
         </main>
-        <footer>
-            <p>Autor strony: <strong>123456</strong></p>
-        </footer>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('przeslij').addEventListener('click', przetworzFormularz);
-    });
-
-    function przetworzFormularz() {
-        const imie = document.getElementById('imie').value.trim().toUpperCase();
-        const nazwisko = document.getElementById('nazwisko').value.trim().toUpperCase();
-        const zgloszenie = document.getElementById('zgloszenie').value.trim();
-        const regulamin = document.getElementById('regulamin').checked;
-        const komunikat = document.getElementById('komunikat');
-
-        if (!regulamin) {
-            komunikat.textContent = "Musisz zapoznać się z regulaminem";
-            komunikat.style.color = "red";
-        } else {
-            komunikat.innerHTML = `${imie} ${nazwisko}<br>Treść Twojej sprawy: ${zgloszenie}`;
-            komunikat.style.color = "Navy";
-        }
-    }
-
-    </script>
+    </section>
+    <footer>
+        <p>Stronę opracował: <a href="https://github.com/PumaYT22/EgzaminyZawodoweINF/">NaukaOdZera</a></p>
+    </footer>
 </body>
 </html>
 
 ```
-#### styl.css
+
+#### styl3.css
 
 ```css
-/* Styl CSS */
+/* Domyślne wartości dla wszystkich selektorów */
 body {
-    background-color: #EEEEEE;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Georgia, serif;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo , header .menu {
-    background-color: LightBlue;
-    height: 100px;
-    width: 50%;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-
-
-
-
-nav.menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-section.banner {
-    background-color: #DDDDDD;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    color: Navy;
-    margin: 50px;
-    height: 400px;
-}
-
-footer {
-    text-align: right;
-    background-color: LightBlue;
+/* Styl dla banera i stopki */
+header, footer {
+    background-color: #C75B39;
+    color: white;
     padding: 10px;
+    text-align: center;
 }
 
-button {
-    background-color: LightBlue;
-    color: Navy;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+/* Styl dla bloku lewego */
+aside {
+    background-color: #FF8A65;
+    width: 25%;
+    height: 500px;
+    padding-top: 50px;
 }
 
-button:hover {
-    opacity: 0.8;
+/* Styl dla bloku prawego */
+main {
+    background-color: Snow;
+    width: 75%;
+    height: 500px;
+    text-align: center;
+    padding-top: 50px;
 }
 
-nav.menu a {
-    color: Navy;
-    font-size: 150%;
-    font-weight: bold;
-    text-decoration: none;
+/* Styl dla obrazów */
+img {
+    width: 25%;
     margin: 10px;
-    padding: 5px;
+    box-shadow: 15px 15px 10px DimGray;
 }
 
-nav.menu a:hover {
-    border: 1px solid Navy;
+/* Styl dla elementów listy */
+li {
+    margin: 5px;
+}
+
+/* Styl dla znaków markerów w elementach listy */
+ol li::marker, ul li::marker {
+    color: Snow;
+}
+
+/* Styl dla nagłówka trzeciego stopnia */
+h3 {
+    margin: 50px 0;
 }
 
 ```
+

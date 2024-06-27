@@ -1,0 +1,46 @@
+* {
+    font-family: Garamond;
+    text-align: center;
+}
+
+body {
+    background: lavender;
+}
+
+header,footer {
+    background: #AF8EB5;
+    color: #fff;
+    padding: 10px;
+}
+
+footer {
+    clear: both;
+}
+
+#lewy,#srodkowy,#prawy {
+    background: #E1BEE7;
+    width: 30%;
+    height: 500px;
+    padding-top: 40px;
+    margin: 15px;
+    box-shadow: 10px 10px 10px DimGray;
+    float: left;
+}
+
+a{
+    color: indigo;
+    font-size: 150%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+a:hover {
+    background: indigo;
+    color: white;
+}
+
+img,table {
+    border: 1px solid #000;
+    width: 80%;
+    margin: 40px auto;
+}
