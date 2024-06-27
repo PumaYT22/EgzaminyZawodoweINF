@@ -1,11 +1,92 @@
+---
+
 # Rozwiązanie arkusza INF 03 styczeń 2023 - 1
 
-W tym arkuszu trzeba było wykonać grafikę  oraz stronę internetową z wskazanym html,css,js.
 
-### Kod na Stronę Internetową
+---
 
-#### mieszamy.html
+## Spis Treści
 
+1. Wprowadzenie
+2. Operacje na Bazie Danych
+3. Kod na Stronę Internetową
+    - mieszamy.html
+    - cena.html
+    - Styl_1.css
+4. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Cel arkuszu: Co trzeba było wykonać</strong>
+                W tym arkuszu trzeba było wykonać grafikę  oraz stronę internetową z wskazanym html,css,js.
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+    <strong>Wskazówka: Praca z kwerendami SQL</strong>
+    Poniżej znajdują się przykładowe kwerendy SQL oraz krótkie wyjaśnienie kluczowych komend:
+    <ul>
+        <li>
+            <strong>Kwerenda 1:</strong>
+            <pre><code>SELECT cena, pojemnosc FROM farby WHERE kolor = "czerwony";</code></pre>
+            Ta kwerenda wybiera kolumny <code>cena</code> i <code>pojemnosc</code> z tabeli <code>farby</code> dla rekordów, gdzie kolumna <code>kolor</code> jest równa "czerwony".
+        </li>
+        <li>
+            <strong>Kwerenda 2:</strong>
+            <pre><code>SELECT kolor, cena/pojemnosc AS "cena jednostkowa" FROM farby;</code></pre>
+            Ta kwerenda oblicza cenę jednostkową farby (cena podzielona przez pojemność) dla każdej farby, wybierając kolumny <code>kolor</code> oraz obliczoną kolumnę <code>cena jednostkowa</code>.
+        </li>
+        <li>
+            <strong>Kwerenda 3:</strong>
+            <pre><code>SELECT kolor, liczba_puszek FROM malowanie JOIN farby ON malowanie.id_farby = farby.id_farby WHERE id_pomieszczenia = 3;</code></pre>
+            Ta kwerenda demonstruje jak łączyć tabele:
+            <ul>
+                <li>
+                    <code>JOIN</code> łączy tabelę <code>malowanie</code> z tabelą <code>farby</code> na podstawie kolumny <code>id_farby</code> w obu tabelach.
+                </li>
+                <li>
+                    Wynik zawiera kolumny <code>kolor</code> i <code>liczba_puszek</code> dla rekordów, gdzie <code>id_pomieszczenia</code> jest równe 3.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Kwerenda 4:</strong>
+            <pre><code>CREATE VIEW pomieszczenie1 AS SELECT id_sciany, id_farby, liczba_puszek FROM malowanie WHERE id_pomieszczenia = 1;</code></pre>
+            Ta kwerenda tworzy widok o nazwie <code>pomieszczenie1</code>, który zawiera kolumny <code>id_sciany</code>, <code>id_farby</code> i <code>liczba_puszek</code> z tabeli <code>malowanie</code> dla rekordów, gdzie <code>id_pomieszczenia</code> jest równe 1.
+        </li>
+    </ul>
+</blockquote>
+
+### kwerendy.txt
+
+```sql
+1. SELECT cena, pojemnosc FROM farby WHERE kolor = "czerwony"; 
+2. SELECT kolor, cena/pojemnosc AS "cena jednostkowa" FROM farby;
+3. SELECT kolor, liczba_puszek FROM malowanie JOIN farby ON malowanie.id_farby = farby.id_farby WHERE id_pomieszczenia = 3;
+4. CREATE VIEW pomieszczenie1 AS SELECT id_sciany, id_farby, liczba_puszek FROM malowanie WHERE id_pomieszczenia = 1;
+```
+
+---
+
+
+## Kod na Stronę Internetową
+
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
+<CodeGroup>
+    <CodeGroupItem title="mieszamy.html">
+      
+### mieszamy.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -78,7 +159,15 @@ W tym arkuszu trzeba było wykonać grafikę  oraz stronę internetową z wskaza
 </html>
 ```
 
-#### cena.html
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera baner, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
+
+</CodeGroupItem>
+<CodeGroupItem title="cena.html">
+      
+### cena.html
 
 ```html
 <!DOCTYPE html>
@@ -146,7 +235,15 @@ W tym arkuszu trzeba było wykonać grafikę  oraz stronę internetową z wskaza
 </html>
 ```
 
-#### styl_1.css
+**Wyjaśnienie:**
+- Plik HTML dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
+- W sekcji `<body>` znajduje się formularz z polami dla imienia, nazwiska, emaila oraz listy zgłoszeń.
+- Skrypt JavaScript `obliczPuszki` jest używany do wyświetlania obliczonych danych w elemencie `<p>` o id `wynik`.
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl_1.css">
+
+### Styl_1.css
 
 ```css
 * {
@@ -209,5 +306,40 @@ img {
     width: 100%;
     border-radius: 20px;
 }
-
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd przycisków zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+<blockquote className="warning">
+                <strong>UWAGA: Załączanie skryptu</strong>
+                Upewnij się, że poprawnie dołączasz skrypt do swoich plików. Możesz to zrobić, dodając go jako zewnętrzny plik za pomocą
+                 <code> &lt;script src="skrypt.js"&gt;&lt;/script&gt;</code> albo umieszczając skrypt bezpośrednio w treści strony. W tym przypadku, najlepiej umieścić skrypt na końcu dokumentu, tuż przed zamykającym znacznikiem <code>&lt;/body&gt;</code>.
+    </blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*
+
