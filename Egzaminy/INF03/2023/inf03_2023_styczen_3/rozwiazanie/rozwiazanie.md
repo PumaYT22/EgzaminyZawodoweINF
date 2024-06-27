@@ -20,7 +20,16 @@
 ## Wprowadzenie!
 
 <blockquote class="introduction">
-                <strong>Wskazówka: Praca z kwerendami SQL</strong>
+          <strong>Cel arkuszu</strong>
+    W tym arkuszu trzeba było zrobić grafikę (wykadrować i przeskalować), sql oraz html,css,php
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+   <strong>Wskazówka: Praca z kwerendami SQL</strong>
     Poniżej znajdują się przykładowe kwerendy SQL oraz krótkie wyjaśnienie kluczowych komend:
     <ul>
         <li>
@@ -78,15 +87,6 @@
             </ul>
         </li>
     </ul>
-</blockquote>
-
----
-
-## Operacje na Bazie Danych
-
-<blockquote className="info">
-    <strong>Wskazówka: Łączenie tabel i sortowanie wyników</strong>
-    Aby połączyć dwie tabele w SQL, możesz użyć INNER JOIN, który zwróci tylko te wiersze, które mają dopasowania w obu tabelach. Dodatkowo, używając klauzuli ORDER BY, możesz sortować wyniki w porządku rosnącym (ASC) lub malejącym (DESC).
 </blockquote>
 
 ### kwerendy.txt
