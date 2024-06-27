@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/EgzaminyZawodoweINF/static/css/main.16c2af67.css",
-    "main.js": "/EgzaminyZawodoweINF/static/js/main.d7bf75f9.js",
-    "static/js/453.5b6c109b.chunk.js": "/EgzaminyZawodoweINF/static/js/453.5b6c109b.chunk.js",
-    "static/media/egz1.jpg": "/EgzaminyZawodoweINF/static/media/egz1.9ba0183330fc2d77497a.jpg",
-    "static/media/egz2.jpg": "/EgzaminyZawodoweINF/static/media/egz2.cbc94405d8ec34608d22.jpg",
-    "static/media/materialhomehtml.png": "/EgzaminyZawodoweINF/static/media/materialhomehtml.450e4bae7c0877ae99ac.png",
-    "static/media/materialhome.png": "/EgzaminyZawodoweINF/static/media/materialhome.2c5a437177b3617f8ddf.png",
-    "static/media/materialhomephp.png": "/EgzaminyZawodoweINF/static/media/materialhomephp.d71b0a76124a62912997.png",
-    "static/media/materialhomejs.png": "/EgzaminyZawodoweINF/static/media/materialhomejs.271d52829124c2e39f5e.png",
-    "static/media/logo.png": "/EgzaminyZawodoweINF/static/media/logo.912b09f45a2be369a42b.png",
-    "static/media/php.svg": "/EgzaminyZawodoweINF/static/media/php.099cd051f27e93830fcdb7b1ac05bc40.svg",
-    "static/media/js.svg": "/EgzaminyZawodoweINF/static/media/js.fef7215d0d3e578f01ad70419d4c4308.svg",
-    "index.html": "/EgzaminyZawodoweINF/index.html",
-    "main.16c2af67.css.map": "/EgzaminyZawodoweINF/static/css/main.16c2af67.css.map",
-    "main.d7bf75f9.js.map": "/EgzaminyZawodoweINF/static/js/main.d7bf75f9.js.map",
-    "453.5b6c109b.chunk.js.map": "/EgzaminyZawodoweINF/static/js/453.5b6c109b.chunk.js.map"
+    "main.css": "/static/css/main.16c2af67.css",
+    "main.js": "/static/js/main.edc679b0.js",
+    "static/js/453.5b6c109b.chunk.js": "/static/js/453.5b6c109b.chunk.js",
+    "static/media/egz1.jpg": "/static/media/egz1.9ba0183330fc2d77497a.jpg",
+    "static/media/egz2.jpg": "/static/media/egz2.cbc94405d8ec34608d22.jpg",
+    "static/media/materialhomehtml.png": "/static/media/materialhomehtml.450e4bae7c0877ae99ac.png",
+    "static/media/materialhome.png": "/static/media/materialhome.2c5a437177b3617f8ddf.png",
+    "static/media/materialhomephp.png": "/static/media/materialhomephp.d71b0a76124a62912997.png",
+    "static/media/materialhomejs.png": "/static/media/materialhomejs.271d52829124c2e39f5e.png",
+    "static/media/logo.png": "/static/media/logo.912b09f45a2be369a42b.png",
+    "static/media/php.svg": "/static/media/php.099cd051f27e93830fcdb7b1ac05bc40.svg",
+    "static/media/js.svg": "/static/media/js.fef7215d0d3e578f01ad70419d4c4308.svg",
+    "index.html": "/index.html",
+    "main.16c2af67.css.map": "/static/css/main.16c2af67.css.map",
+    "main.edc679b0.js.map": "/static/js/main.edc679b0.js.map",
+    "453.5b6c109b.chunk.js.map": "/static/js/453.5b6c109b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16c2af67.css",
-    "static/js/main.d7bf75f9.js"
+    "static/js/main.edc679b0.js"
   ]
 }
