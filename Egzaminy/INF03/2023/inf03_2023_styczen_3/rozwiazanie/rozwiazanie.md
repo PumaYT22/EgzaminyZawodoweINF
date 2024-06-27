@@ -1,11 +1,125 @@
+---
+
 # Rozwiązanie arkusza INF 03 styczeń 2023 - 3
 
-W tym arkuszu trzeba było wykonać grafikę (przekadrować i przeskalować) oraz stronę internetową z wskazanym html,css,php.
 
-### Kod na Stronę Internetową
+---
 
-#### index.html
+## Spis Treści
 
+1. Wprowadzenie
+2. Operacje na Bazie Danych
+3. Kod na Stronę Internetową
+    - index.html
+    - znajdz.html
+    - styl3.css
+4. Podsumowanie
+
+---
+
+## Wprowadzenie!
+
+<blockquote class="introduction">
+                <strong>Wskazówka: Praca z kwerendami SQL</strong>
+    Poniżej znajdują się przykładowe kwerendy SQL oraz krótkie wyjaśnienie kluczowych komend:
+    <ul>
+        <li>
+            <strong>Kwerenda 1:</strong>
+            <pre><code>SELECT nazwa, ulica FROM kwiaciarnie WHERE miasto = "Malbork";</code></pre>
+            Ta kwerenda wybiera kolumny <code>nazwa</code> i <code>ulica</code> z tabeli <code>kwiaciarnie</code> dla rekordów, gdzie kolumna <code>miasto</code> jest równa "Malbork".
+        </li>
+        <li>
+            <strong>Kwerenda 2:</strong>
+            <pre><code>SELECT id_kwiaciarni, COUNT(*) FROM zamowienia GROUP BY id_kwiaciarni;</code></pre>
+            Ta kwerenda używa funkcji agregującej:
+            <ul>
+                <li>
+                    <code>COUNT(*)</code> zlicza wszystkie rekordy w grupach zdefiniowanych przez kolumnę <code>id_kwiaciarni</code>.
+                </li>
+                <li>
+                    <code>GROUP BY</code> grupuje wyniki na podstawie wartości w kolumnie <code>id_kwiaciarni</code>.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Kwerenda 3:</strong>
+            <pre><code>SELECT nazwa, miasto, kwiaty FROM zamowienia JOIN kwiaciarnie ON zamowienia.id_kwiaciarni = kwiaciarnie.id_kwiaciarni WHERE data="2017.01.07";</code></pre>
+            Ta kwerenda demonstruje jak łączyć tabele:
+            <ul>
+                <li>
+                    <code>JOIN</code> łączy tabelę <code>zamowienia</code> z tabelą <code>kwiaciarnie</code> na podstawie kolumny <code>id_kwiaciarni</code> w obu tabelach.
+                </li>
+                <li>
+                    Wynik zawiera kolumny <code>nazwa</code>, <code>miasto</code> i <code>kwiaty</code> dla rekordów, gdzie kolumna <code>data</code> jest równa "2017.01.07".
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Kwerenda 4:</strong>
+            <pre><code>CREATE TABLE klienci (
+  id int NOT NULL AUTO_INCREMENT,
+  imie varchar(15), nazwisko varchar(15),
+  rabat int UNSIGNED,
+  PRIMARY KEY (id) );</code></pre>
+            Ta kwerenda tworzy nową tabelę o nazwie <code>klienci</code>:
+            <ul>
+                <li>
+                    Kolumna <code>id</code> jest typu <code>int</code>, nie może być pusta (<code>NOT NULL</code>), i jest automatycznie inkrementowana (<code>AUTO_INCREMENT</code>).
+                </li>
+                <li>
+                    Kolumny <code>imie</code> i <code>nazwisko</code> są typu <code>varchar(15)</code>.
+                </li>
+                <li>
+                    Kolumna <code>rabat</code> jest typu <code>int</code> i nie może mieć wartości ujemnych (<code>UNSIGNED</code>).
+                </li>
+                <li>
+                    <code>PRIMARY KEY (id)</code> ustawia kolumnę <code>id</code> jako klucz główny tabeli.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</blockquote>
+
+---
+
+## Operacje na Bazie Danych
+
+<blockquote className="info">
+    <strong>Wskazówka: Łączenie tabel i sortowanie wyników</strong>
+    Aby połączyć dwie tabele w SQL, możesz użyć INNER JOIN, który zwróci tylko te wiersze, które mają dopasowania w obu tabelach. Dodatkowo, używając klauzuli ORDER BY, możesz sortować wyniki w porządku rosnącym (ASC) lub malejącym (DESC).
+</blockquote>
+
+### kwerendy.txt
+
+```sql
+1. SELECT nazwa, ulica FROM kwiaciarnie WHERE miasto = "Malbork";
+2. SELECT id_kwiaciarni, COUNT(*) FROM zamowienia GROUP BY id_kwiaciarni;
+3. SELECT nazwa, miasto, kwiaty FROM zamowienia 
+JOIN kwiaciarnie ON zamowienia.id_kwiaciarni = kwiaciarnie.id_kwiaciarni WHERE 
+data="2017.01.07";
+4. CREATE TABLE klienci (
+  id int NOT NULL AUTO_INCREMENT,
+  imie varchar(15),  nazwisko varchar(15),
+  rabat int UNSIGNED,
+  PRIMARY KEY (id) );
+```
+
+---
+
+
+
+## Kod na Stronę Internetową
+
+<blockquote className="info">
+    <strong>Wskazówka: Korzystanie z Emmet w Visual Studio Code</strong>
+    Visual Studio Code posiada wbudowane wiele przydatnych funkcji, takich jak IntelliSense czy Emmet, które znacznie przyspieszają pracę programistów. Przy edycji plików HTML możemy szybko generować szablony strony, wpisując skrótowe komendy, jak na przykład `!` - wykrzyknik.
+</blockquote>
+
+<CodeGroup>
+    <CodeGroupItem title="index.html">
+      
+### Index.html
+      
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -45,11 +159,17 @@ W tym arkuszu trzeba było wykonać grafikę (przekadrować i przeskalować) ora
     </footer>
 </body>
 </html>
-
-
 ```
 
-#### znajdz.php
+**Wyjaśnienie:**
+- Ten plik HTML definiuje strukturę strony głównej.
+- W sekcji `<head>` znajdują się meta dane strony oraz odwołania do arkusza stylów i ikony.
+- Struktura strony zawiera nagłówek, menu nawigacyjne, trzy sekcje z treścią oraz stopkę.
+
+</CodeGroupItem>
+<CodeGroupItem title="znajdz.php">
+      
+### znajdz.php
 
 ```php
 <!DOCTYPE html>
@@ -111,10 +231,17 @@ W tym arkuszu trzeba było wykonać grafikę (przekadrować i przeskalować) ora
     </footer>
 </body>
 </html>
-
 ```
 
-#### styl3.css
+**Wyjaśnienie:**
+- Plik PHP dla strony kontaktowej zawiera formularz do wypełnienia przez użytkownika.
+- W sekcji `<body>` znajduje się formularz z polami dla miasta.
+- Skrypt php wybiera dane z tablicy kwiaciarnie w danym mieście.
+    
+</CodeGroupItem>   
+<CodeGroupItem title="styl3.css">
+
+### Styl3.css
 
 ```css
 /* Domyślne wartości dla wszystkich selektorów */
@@ -168,6 +295,44 @@ ol li::marker, ul li::marker {
 h3 {
     margin: 50px 0;
 }
-
 ```
+**Wyjaśnienie:**
+- Arkusz stylów CSS definiuje wygląd strony.
+- Kolory tła, czcionki oraz wygląd markerów w elemetnach list zostały ustawione, aby strona była estetyczna i spójna.
+- Menu nawigacyjne oraz układ głównych sekcji są również zdefiniowane.
 
+</CodeGroupItem>
+</CodeGroup>
+
+
+
+<blockquote className="warning">
+    <strong>UWAGA: Załączanie skryptu PHP</strong>
+    Upewnij się, że poprawnie dołączasz skrypt PHP do swoich plików. Możesz to zrobić, używając funkcji <code>include</code> lub <code>require</code> lub wstawić skrypt php w danej sekcji na stronie. Na przykład:
+    <pre><code>&lt;?php include 'skrypt.php'; ?&gt;</code></pre>
+    lub
+    <pre><code>&lt;?php require 'skrypt.php'; ?&gt;</code></pre>
+    Pamiętaj, że <code>require</code> zatrzyma wykonywanie skryptu w przypadku błędu, podczas gdy <code>include</code> tylko wyświetli ostrzeżenie i pozwoli na kontynuację. Upewnij się, że ścieżka do pliku jest poprawna     i plik jest dostępny.
+    
+</blockquote>
+
+---
+
+## Podsumowanie
+
+🎉 **Gratulacje!** Udało Ci się stworzyć stronę internetową z grafiką i animacją oraz formularzem kontaktowym.
+
+#### Przydatne zasoby:
+- [HTML Odwołanie](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JS Odwołanie](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Odwołanie](https://phpkurs.pl/)
+
+<blockquote className="danger">
+                <strong>UWAGA: Egzamin zawodowy INF03</strong>
+                Upewnij się, że dokładnie zapoznałeś się z wymaganiami egzaminacyjnymi dotyczącymi przedmiotu inf03. Sprawdź najnowsze informacje na stronie Centralnej Komisji Egzaminacyjnej.
+</blockquote>
+
+Jeśli masz pytania lub znalazłeś błąd, nie wahaj się skontaktować! 😊
+
+Autor: *NaukaOdZera*
