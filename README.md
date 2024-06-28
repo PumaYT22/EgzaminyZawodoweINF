@@ -16,6 +16,16 @@ Chcesz pomóc w rozwoju EgzaminyZawodoweINF? Oto kilka sposobów:
 * **Dodaj gwiazdkę:** Oznacz repozytorium gwiazdką na GitHubie, aby pokazać swoje wsparcie. ⭐
 * **Zgłoś problem:** Masz jakieś uwagi lub sugestie? Zgłoś je na GitHubie, aby pomóc w ulepszeniu repozytorium. ✍️
 
+## Linki społecznościowe
+
+Dołącz do społeczności NaukaOdZera i rozwijaj swoje umiejętności informatyczne!
+
+- Twitter/X: [NaukaOdZera](https://x.com/NaukaOdZera)
+- Youtube: [NaukaOdZera](https://www.youtube.com/@NaukaOdZera)
+- Tiktok: [NaukaOdZera](https://www.tiktok.com/@naukaodzera)
+- Instagram: [NaukaOdZera](https://www.instagram.com/naukaodzera/)
+- Discord: [NaukaOdZera](https://discord.gg/3VtcKBNA3s)
+
 **Razem możemy zrobić to repozytorium jeszcze lepszym!**
 
 Dzięki tym zmianom repozytorium EgzaminyZawodoweINF stanie się jeszcze bardziej wartościowym źródłem wiedzy i wsparcia dla wszystkich, którzy przygotowują się do egzaminów zawodowych z informatyki!
