@@ -1,0 +1,63 @@
+* {
+    font-family: Garamond, serif;
+    background-color: MistyRose;
+    color: rgb(62, 39, 35);
+    text-align: center;
+}
+
+
+
+#baner {
+    width: 100%;
+}
+
+main{
+    display: flex;
+}
+
+#lewy {
+    width: 20%;
+    height: 600px;
+    margin: 30px;
+    float: left;
+    overflow:auto;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+#prawy {
+    width: 65%;
+    height: 600px;
+    float: left;
+}
+
+#lewy img {
+    width: 100%;
+}
+
+.thumbnail {
+    width: 140px;
+    padding: 2px;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    border: 1px dotted black;
+}
+
+#activeImage {
+    width: 500px;
+    margin: 30px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+table {
+    width: 100%;
+    border: 1px dashed black;
+    border-collapse: collapse;
+}
+
+#stopka {
+    width: 100%;
+    clear: both;
+}

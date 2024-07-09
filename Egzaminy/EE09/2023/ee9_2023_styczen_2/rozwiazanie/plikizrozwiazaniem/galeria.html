@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl2.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section id="baner">
+        <h1>Galeria obrazów</h1>
+    </section>
+    <main>
+        <section id="lewy">
+            <img src="zdjecie.jpg" alt="zdjęcie dnia">
+            <h3>Zdjęcia opublikowali</h3>
+            <table>
+                <tr>
+                    <td>Anna Porada</td>
+                    <td>10 zdjęć</td>
+                </tr>
+                <tr>
+                    <td>Krzysztof Wasilewski</td>
+                    <td>12 zdjęć</td>
+                </tr>
+                <tr>
+                    <td>Monika Kowalska</td>
+                    <td>4 zdjęć</td>
+                </tr>
+            </table>
+        </section>
+        <section id="prawy">
+            <button onclick="prev()">prev</button>
+            <img id="activeImage" src="1.jpg" alt="galeria">
+            <button onclick="next()">next</button>
+            <hr>
+            <img class="thumbnail" src="1.jpg" alt="miniatura" onclick="showImage(1)">
+            <img class="thumbnail" src="2.jpg" alt="miniatura" onclick="showImage(2)">
+            <img class="thumbnail" src="3.jpg" alt="miniatura" onclick="showImage(3)">
+            <img class="thumbnail" src="4.jpg" alt="miniatura" onclick="showImage(4)">
+            <img class="thumbnail" src="5.jpg" alt="miniatura" onclick="showImage(5)">
+        </section>
+    </main>
+    <footer id="stopka">
+        <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
+        <p>Galerię wykonał: NaukaOdZera</p>
+    </footer>
+
+    <script>
+        let activeImageIndex = 1;
+            const totalImages = 5;
+
+            function showImage(index) {
+                activeImageIndex = index;
+                document.getElementById('activeImage').src = `${index}.jpg`;
+            }
+
+            function next() {
+                activeImageIndex = (activeImageIndex % totalImages) + 1;
+                showImage(activeImageIndex);
+            }
+
+            function prev() {
+                activeImageIndex = (activeImageIndex - 2 + totalImages) % totalImages + 1;
+                showImage(activeImageIndex);
+            }
+
+    </script>
+</body>
+</html>

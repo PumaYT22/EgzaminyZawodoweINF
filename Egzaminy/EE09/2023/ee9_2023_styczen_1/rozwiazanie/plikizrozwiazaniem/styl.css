@@ -1,0 +1,50 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #DDD;
+    color: #546E7A;
+}
+
+section {
+   
+    margin: 20px;
+    background-color: white;
+    height: 600px;
+    box-shadow: 0px 0px 20px 0px grey;
+}
+
+#lewy {
+    width: 50%;
+    float: left;
+}
+
+#prawy {
+    width: 30%;
+    float: left;
+}
+
+#stopka {
+    background-color: #5C6BC0;
+    color: white;
+    padding: 30px;
+    clear: both;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    background-color: #5C6BC0;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-weight: 300;
+}
+
+h3, p {
+    padding-left: 30px;
+}
+
+h2, h4{
+    text-align: center;
+}
