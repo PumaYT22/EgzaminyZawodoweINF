@@ -1,6 +1,6 @@
 ---
 
-# Rozwiązanie arkusza EE09 styczeń 2024 - 1
+# Rozwiązanie arkusza EE09 styczeń 2023 - 2
 
 
 ---
@@ -117,7 +117,7 @@
 
 
 </CodeGroupItem> 
-<CodeGroupItem title="styl.css">
+<CodeGroupItem title="styl2.css">
 
 ### Styl2.css
 

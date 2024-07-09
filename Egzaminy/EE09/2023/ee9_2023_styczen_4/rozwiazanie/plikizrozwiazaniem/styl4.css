@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: AntiqueWhite;
+}
+
+#baner {
+    background-color: #7B5E57;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+form input,
+form button {
+    background-color: #7B5E57;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid white;
+}
+
+form button:hover {
+    background-color: white;
+    color: #7B5E57;
+}
+
+#wizytowka {
+    color: #5D4037;
+    max-width: 300px;
+    text-align: center;
+    margin: 70px auto;
+    padding-bottom: 60px;
+    box-shadow: 0 0 20px grey;
+}
+
+#wizytowka img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#stopka-lewa,
+#stopka-prawa {
+    background-color: #7B5E57;
+    color: white;
+    width: 33%;
+    height: 200px;
+
+}
+
+#stopka-srodek {
+    background-color: #7B5E57;
+    color: white;
+    width: 34%;
+    height: 200px;
+   
+}

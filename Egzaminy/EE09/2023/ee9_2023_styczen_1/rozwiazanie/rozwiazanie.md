@@ -1,6 +1,6 @@
 ---
 
-# Rozwiązanie arkusza EE09 styczeń 2024 - 1
+# Rozwiązanie arkusza EE09 styczeń 2023 - 1
 
 
 ---

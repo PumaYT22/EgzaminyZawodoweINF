@@ -1,0 +1,4 @@
+1. SELECT id, imie, nazwisko, adres, miasto FROM pracownicy WHERE id = 1;
+2. SELECT imie, nazwisko FROM pracownicy WHERE czyRODO = false;
+3. SELECT id, nazwisko FROM pracownicy WHERE dataUr LIKE "197%" AND czyBadania = false;
+4. ALTER TABLE pracownicy ADD umiejetnosci TEXT;

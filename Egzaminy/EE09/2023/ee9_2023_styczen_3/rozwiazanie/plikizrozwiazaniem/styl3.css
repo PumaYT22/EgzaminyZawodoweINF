@@ -1,0 +1,55 @@
+body {
+    font-family: Georgia;
+    background-color: AliceBlue;
+}
+
+header {
+    background-color: #A00037;
+    color: white;
+    text-align: center;
+    font-size: 150%;
+    padding: 3px;
+}
+
+main{
+   display: flex;
+   justify-content: space-around;
+}
+
+#articles {
+    width: 70%;
+}
+
+button {
+    background-color: #D81B60;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+#redakcja {
+    background-color: #D81B60;
+    color: white;
+    width: 20%;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 15px 15px 12px DimGray;
+}
+
+#redakcja h5, #redakcja blockquote {
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: max-content;
+}
+
+table {
+    margin: auto;
+    width: 95%;
+    border: 1px solid AliceBlue;
+}
