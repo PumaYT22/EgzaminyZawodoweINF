@@ -3,7 +3,7 @@
 Witaj w **EgzaminyZawodoweINF** - repozytorium pełnym gotowych rozwiązań egzaminów zawodowych dla Informatyków/Programistów na poziomie inf03 i inf04! 
 
 Znajdziesz tu:
-* **Stronę stworzoną pod repozytorium:** https://pumayt22.github.io/EgzaminyZawodoweINF/
+* **Aplikację na Androida stworzoną pod repozytorium:** [Link do aplikacji na Sklepie Google](https://play.google.com/store/apps/details?id=pl.jakubguzda.egzaminyzawodoweinf)
 * **Kompleksowe rozwiązania zadań egzaminacyjnych:** Dokładne odpowiedzi, które pomogą Ci zdać egzamin z łatwością! ✅
 * **Przydatne materiały edukacyjne:** Dodatkowe wskazówki i materiały ułatwiające naukę.
 * **Ciągłe aktualizacje:** Nowe rozwiązania i materiały dodawane regularnie! 🆕
