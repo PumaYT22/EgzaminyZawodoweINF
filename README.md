@@ -7,6 +7,7 @@ Znajdziesz tu:
 * **Kompleksowe rozwiązania zadań egzaminacyjnych:** Dokładne odpowiedzi, które pomogą Ci zdać egzamin z łatwością! ✅
 * **Przydatne materiały edukacyjne:** Dodatkowe wskazówki i materiały ułatwiające naukę.
 * **Ciągłe aktualizacje:** Nowe rozwiązania i materiały dodawane regularnie! 🆕
+* **Strona** [egzaminyez.pl](https://egzaminyez.pl/)
 
 ## Wsparcie projektu
 
